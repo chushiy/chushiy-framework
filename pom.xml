@@ -12,9 +12,9 @@
     <packaging>pom</packaging>
     <name>chushiy</name>
     <description>
-        chushiy
+        chushiy-framework
     </description>
-    <url>https://github.com/chushiy/chushiy</url>
+    <url>https://github.com/chushiy/chushiy-framework</url>
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -23,9 +23,9 @@
     </licenses>
 
     <scm>
-        <connection>https://github.com/chushiy/chushiy.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:chushiy/chushiy.git</developerConnection>
-        <url>https://github.com/chushiy/chushiy</url>
+        <connection>https://github.com/chushiy/chushiy-framework.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:chushiy/chushiy-framework.git</developerConnection>
+        <url>https://github.com/chushiy/chushiy-framework</url>
     </scm>
 
     <developers>
