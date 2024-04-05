@@ -1,0 +1,2 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+  com.chushiy.spring.boot.autoconfigure.ChuShiYAutoConfigure

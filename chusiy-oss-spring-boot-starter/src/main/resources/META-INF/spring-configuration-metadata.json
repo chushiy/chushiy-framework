@@ -1,0 +1,32 @@
+{
+  "properties": [
+    {
+      "name": "chushiy.oss",
+      "description": "对象存储相关配置"
+    },
+    {
+      "name": "chushiy.oss.region",
+      "description": "对象存储服务的URL"
+    },
+    {
+      "name": "chushiy.oss.endpoint",
+      "description": "区域"
+    },
+    {
+      "name": "chushiy.oss.pathStyleAccess",
+      "description": "true path-style nginx 反向代理和S3默认支持 pathStyle模式 {http://endpoint/bucketname} \n false supports virtual-hosted-style 阿里云等需要配置为 virtual-hosted-style 模式{http://bucketname.endpoint} \n 只是url的显示不一样"
+    },
+    {
+      "name": "chushiy.oss.accessKey",
+      "description": "Access key"
+    },
+    {
+      "name": "chushiy.oss.secretKey",
+      "description": "Secret key"
+    },
+    {
+      "name": "chushiy.oss.maxConnections",
+      "description": "最大线程数，默认： 100"
+    }
+  ]
+}

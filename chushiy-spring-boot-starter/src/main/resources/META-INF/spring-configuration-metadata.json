@@ -1,0 +1,12 @@
+{
+  "properties": [
+    {
+      "name": "chushiy",
+      "description": "配置"
+    },
+    {
+      "name": "chushiy.jsonType",
+      "description": "项目中用的json类型"
+    }
+  ]
+}
