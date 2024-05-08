@@ -15,6 +15,7 @@
 
     <description>
         解耦JSON类库 提供各类JSON
+        以chushiy-standard作为标准 所以必须包含
     </description>
 
     <properties>
@@ -24,8 +25,9 @@
     </properties>
 
     <dependencies>
+
+        <!-- 导入必要的规范 -->
         <dependency>
-            <!--    <groupId>com.chushiy</groupId>-->
             <groupId>io.github.chushiy</groupId>
             <artifactId>chushiy-standard</artifactId>
         </dependency>
