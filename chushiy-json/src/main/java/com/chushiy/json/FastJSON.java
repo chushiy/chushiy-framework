@@ -18,7 +18,8 @@ import java.util.Map;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-public class FastJSON implements JSON {
+// TODO 完美考虑继承 alibaba JSON
+public final class FastJSON implements JSON, com.alibaba.fastjson2.JSON {
     @Override
     public String toString(POJO pojo) {
         return com.alibaba.fastjson.JSON.toJSONString(pojo);
