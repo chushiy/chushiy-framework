@@ -19,16 +19,15 @@ public enum JSONTypeEnum {
     /**
      * fastjson
      */
-    FASTJSON("fastjson","fastjson"),
+    FASTJSON("fastjson", "fastjson"),
     /**
      * gson
      */
-    GSON("gson","gson"),
+    GSON("gson", "gson"),
     /**
      * jackson
      */
-    JACKSON("jackson","jackson")
-    ;
+    JACKSON("jackson", "jackson");
 
     private final String name;
     private final String desc;

@@ -11,5 +11,5 @@ package com.chushiy.standard.pojo;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-public interface Request extends POJO{
+public interface Request extends POJO {
 }

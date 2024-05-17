@@ -1,22 +1,28 @@
 package com.chushiy.standard.controller;
 
+import com.chushiy.standard.convert.Convert;
 import com.chushiy.standard.exception.BusinessException;
 import com.chushiy.standard.exception.support.ErrorSupport;
+import com.chushiy.standard.pojo.PO;
 import com.chushiy.standard.pojo.Result;
+import com.chushiy.standard.service.BaseService;
 
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/1/23 下午 7:21
- * @Description controller基类
+ * @DateTime 2024/1/23 下午 7:22
+ * @Description restful controller基类
  * @ProjectName chushiy
  * @PackageName com.chushiy.standard.controller
- * @ClassName Controller.java
+ * @ClassName BaseRestController.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-@org.springframework.stereotype.Controller
-public class Controller {
+public abstract class BaseRestController<T extends PO> extends AbstractBaseController<T> {
+
+    public BaseRestController(Convert<T> convert, BaseService<T> service) {
+        super(convert, service);
+    }
 
     public Result<Void> success(String message) {
         return Result.success(message);

@@ -22,9 +22,10 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface EnableRestControllerResponseAdvice {
 
+    // TODO 可以支持指定对象进行包装 指定正确方法 错误方法
+
     /**
      * 是否开启
-     * @return
      */
     boolean enable() default true;
 }

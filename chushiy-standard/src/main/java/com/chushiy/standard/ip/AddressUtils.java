@@ -13,14 +13,15 @@ import org.slf4j.LoggerFactory;
 public class AddressUtils {
     /**
      * The constant IP_URL.
+     * IP地址查询
      */
-// IP地址查询
     public static final String IP_URL = "http://whois.pconline.com.cn/ipJson.jsp";
     /**
      * The constant UNKNOWN.
+     * 未知地址
      */
-// 未知地址
     public static final String UNKNOWN = "XX XX";
+
     private static final Logger log = LoggerFactory.getLogger(AddressUtils.class);
 
     /**

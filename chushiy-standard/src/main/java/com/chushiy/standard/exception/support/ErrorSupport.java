@@ -15,30 +15,45 @@ public interface ErrorSupport {
 
     /**
      * is系统错误
+     *
      * @return
      */
     boolean isSystemError();
 
     /**
      * 错误模块
+     *
      * @return
      */
     ModuleSupport module();
 
     /**
      * 错误code
-     *  错误码为8位
-     *  第一位 0|1 0表示系统错误
-     *  系统错误?1:0+模块code 4位+错误码 3位
+     * 错误码为8位
+     * 第一位 0|1 0表示系统错误
+     * 系统错误?1:0+模块code 4位+错误码 3位
+     *
      * @return
      */
     String getCode();
-    /*default String getCode(){
-        return (this.isSystemError()?0:1)+this.getModule().code()+this.
-    }*/
+
+    /**
+     * 增加默认接口实现
+     * 错误code
+     * 错误码为8位
+     * 第一位 0|1 0表示系统错误
+     * 系统错误?1:0+模块code 4位+错误码 3位
+     *
+     * @param code 错误码 3位
+     * @return
+     */
+    default String getCode(String code) {
+        return (this.isSystemError() ? 0 : 1) + this.module().code() + code;
+    }
 
     /**
      * 错误信息
+     *
      * @return
      */
     String getMessage();

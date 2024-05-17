@@ -35,7 +35,7 @@ import java.io.IOException;
 public class ClientInformationFilter implements OrderedFilter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        HttpServletRequest request = (HttpServletRequest)req;
+        HttpServletRequest request = (HttpServletRequest) req;
         ClientInformation clientInformation = new ClientInformation();
         clientInformation.setIp(IpUtils.getIpAddr(request));
         log.info("client ip {}", clientInformation.getIp());

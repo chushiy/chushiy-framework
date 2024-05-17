@@ -1,6 +1,7 @@
 package com.chushiy.spring.boot.autoconfigure.advice;
 
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
  * @Author 初时y
@@ -13,6 +14,7 @@ import lombok.extern.slf4j.Slf4j;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
+@RestControllerAdvice
 @Slf4j
 public class GlobalExceptionHandler {
 }

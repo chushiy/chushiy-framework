@@ -16,12 +16,14 @@ public interface ModuleSupport {
     /**
      * 模块code
      * 四位
+     *
      * @return
      */
     String code();
 
     /**
      * 模块名称
+     *
      * @return
      */
     String name();

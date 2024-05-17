@@ -1,6 +1,7 @@
 package com.chushiy.standard;
 
 import com.chushiy.standard.pojo.ClientInformation;
+import com.chushiy.standard.pojo.LoginUser;
 
 /**
  * @Author 初时y
@@ -15,18 +16,37 @@ import com.chushiy.standard.pojo.ClientInformation;
  */
 public class ThreadContext {
 
-    // private static InheritableThreadLocal<LoginUser> loginTokenThreadLocal = new InheritableThreadLocal<>();
+    /**
+     * 登录用户
+     */
+    private static InheritableThreadLocal<LoginUser> loginUserThreadLocal = new InheritableThreadLocal<>();
 
     /**
      * 客户端信息 clientInformationThreadLocal
      */
     private static InheritableThreadLocal<ClientInformation> clientInformationThreadLocal = new InheritableThreadLocal<>();
 
-    public static void setClientInformation(ClientInformation clientInformation) {
-        clientInformationThreadLocal.set(clientInformation);
-    }
-
     public static void removeClientInformation() {
         clientInformationThreadLocal.remove();
+    }
+
+    public static void removeLoginUser() {
+        loginUserThreadLocal.remove();
+    }
+
+    public static LoginUser getLoginUser() {
+        return loginUserThreadLocal.get();
+    }
+
+    public static void setLoginUser(LoginUser loginUser) {
+        loginUserThreadLocal.set(loginUser);
+    }
+
+    public static ClientInformation getClientInformation() {
+        return clientInformationThreadLocal.get();
+    }
+
+    public static void setClientInformation(ClientInformation clientInformation) {
+        clientInformationThreadLocal.set(clientInformation);
     }
 }

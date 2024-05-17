@@ -14,5 +14,8 @@ package com.chushiy.standard.function;
 @FunctionalInterface
 public interface Consumer {
 
+    /**
+     * 消费
+     */
     void accept();
 }

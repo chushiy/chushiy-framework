@@ -53,7 +53,7 @@ public class ChuShiYOSSAutoConfigure {
 
     @ConditionalOnBean(AmazonS3.class)
     @Bean
-    public OSSTemplate ossTemplate(AmazonS3 amazonS3){
+    public OSSTemplate ossTemplate(AmazonS3 amazonS3) {
         return new OSSTemplateImpl(amazonS3);
     }
 }

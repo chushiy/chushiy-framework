@@ -29,15 +29,11 @@ public interface OSSTemplate {
 
     /**
      * 获取所有的bucket
-     *
-     * @return
      */
     List<Bucket> getAllBuckets();
 
     /**
      * 通过bucket名称删除bucket
-     *
-     * @param bucketName
      */
     void removeBucket(String bucketName);
 
@@ -77,7 +73,6 @@ public interface OSSTemplate {
      * @param bucketName
      * @param objectName
      * @param expires
-     * @return
      */
     String getObjectURL(String bucketName, String objectName, Integer expires);
 

@@ -20,17 +20,16 @@ public interface ResultI18nMessageAssembler {
     /**
      * 返回国际化message
      *
-     * @param language 语言
+     * @param language          语言
      * @param businessException 业务异常
      * @return 返回对应的国际化信息
      */
-    String assembler(Locale language,BusinessException businessException);
+    String assembler(Locale language, BusinessException businessException);
 
     /**
-     *
-     * @param language 语言
+     * @param language      语言
      * @param originMessage 原始信息
      * @return 返回对应的国际化信息
      */
-    String assembler(Locale language,String originMessage);
+    String assembler(Locale language, String originMessage);
 }

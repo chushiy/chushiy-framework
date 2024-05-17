@@ -26,31 +26,27 @@ import lombok.ToString;
 public class Result<T> implements VO {
 
     /**
-     * 代码 使用字符串类型
-     * 使用int类型有弊端 0001
-     */
-    private final String code;
-
-    /**
-     * 消息
-     */
-    private String message;
-
-    /**
-     * 数据
-     */
-    private T data;
-
-    /**
      * 空数据
      */
     private static final Void EMPTY_DATA = null;
-
     /**
      * 默认成功
      * 使用单例模式
      */
     private static Result<Void> success = new Result<>();
+    /**
+     * 代码 使用字符串类型
+     * 使用int类型有弊端 0001
+     */
+    private final String code;
+    /**
+     * 消息
+     */
+    private String message;
+    /**
+     * 数据
+     */
+    private T data;
 
     private Result() {
         this.code = ResponseConstant.SUCCESS_CODE;

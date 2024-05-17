@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.Interceptor;
+package com.chushiy.spring.boot.autoconfigure.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;

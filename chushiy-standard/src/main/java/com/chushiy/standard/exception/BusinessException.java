@@ -34,15 +34,15 @@ public class BusinessException extends RuntimeException implements Serializable 
      * @param message
      * @deprecated 可以自己传入code或者message不推荐 <br>
      * 推荐使用{@link #BusinessException(ErrorSupport errorSupport)} <br>
-     * 或者{@link #BusinessException(ErrorSupport errorSupport, Throwable cause, Object... args)}
+     * 或者{@link #BusinessException(ErrorSupport errorSupport, java.lang.Throwable cause, Object... args)}
      */
     @Deprecated
     public BusinessException(String message) {
-        this(ResponseConstant.FAIL_CODE, message, new BusinessException());
+        this(ResponseConstant.FAIL_CODE, message);
     }
 
     @Deprecated
-    public BusinessException(String message, Throwable cause, Object... args) {
+    public BusinessException(String message, java.lang.Throwable cause, Object... args) {
         this(ResponseConstant.FAIL_CODE, StrUtil.format(message, args), cause);
     }
 
@@ -52,7 +52,14 @@ public class BusinessException extends RuntimeException implements Serializable 
     }
 
     @Deprecated
-    public BusinessException(String code, String message, Throwable cause, Object... args) {
+    public BusinessException(String code, String message, java.lang.Throwable cause) {
+        super(message, cause);
+        this.code = code;
+        this.message = message;
+    }
+
+    @Deprecated
+    public BusinessException(String code, String message, java.lang.Throwable cause, Object... args) {
         super(message, cause);
         this.code = code;
         this.message = StrUtil.format(message, args);
@@ -64,7 +71,7 @@ public class BusinessException extends RuntimeException implements Serializable 
         this.message = errorSupport.getMessage();
     }
 
-    public BusinessException(ErrorSupport errorSupport, Throwable cause, Object... args) {
+    public BusinessException(ErrorSupport errorSupport, java.lang.Throwable cause, Object... args) {
         super(StrUtil.format(errorSupport.getMessage(), args), cause);
         this.code = errorSupport.getCode();
         this.message = StrUtil.format(errorSupport.getMessage(), args);

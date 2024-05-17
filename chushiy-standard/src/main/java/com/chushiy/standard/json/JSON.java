@@ -20,7 +20,7 @@ public interface JSON {
 
     String toString(POJO pojo);
 
-    String toString(Map<String,Object> map);
+    String toString(Map<String, Object> map);
 
     String toString(Collection<Object> collection);
 

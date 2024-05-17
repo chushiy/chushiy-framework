@@ -19,6 +19,7 @@ public class Page<T> implements IPage<T> {
     private long total;
 
     private long size;
+    private long current;
 
     @Override
     public List<T> getRecords() {
@@ -52,8 +53,6 @@ public class Page<T> implements IPage<T> {
     public long getSize() {
         return this.size;
     }
-
-    private long current;
 
     @Override
     public IPage<T> setCurrent(long current) {

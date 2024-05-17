@@ -29,10 +29,10 @@ public class RestControllerResponseAdvice implements ResponseBodyAdvice<Object> 
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
         boolean isResult = returnType.getParameterType().isAssignableFrom(Result.class);
         boolean isModelAndView = returnType.getParameterType().equals(ModelAndView.class);
-        //region 如果加了@EnableRestControllerResponseAdvice enable = true正常执行 =false则不包装 没有加该注解也进行包装
+        // region 如果加了@EnableRestControllerResponseAdvice enable = true正常执行 =false则不包装 没有加该注解也进行包装
         EnableRestControllerResponseAdvice enableRestControllerResponseAdvice =
                 returnType.getMethod().getAnnotation(EnableRestControllerResponseAdvice.class);
-        //endregion
+        // endregion
         return !isResult && !isModelAndView
                 && (ObjectUtils.isEmpty(enableRestControllerResponseAdvice) || enableRestControllerResponseAdvice.enable());
     }

@@ -29,61 +29,43 @@ public interface IPage<T> extends VO {
 
     /**
      * 获取分页记录
-     *
-     * @return
      */
     List<T> getRecords();
 
     /**
      * 获取分页记录
-     *
-     * @param records
-     * @return
      */
     IPage<T> setRecords(List<T> records);
+
+    /**
+     * 获取记录总行数
+     */
+    long getTotal();
 
     /**
      * 设置记录总行数
      *
      * @param size
-     * @return
      */
     IPage<T> setTotal(long total);
 
     /**
-     * 获取记录总行数
-     *
-     * @return
-     */
-    long getTotal();
-
-    /**
-     * 设置每页显示条数
-     *
-     * @param size
-     * @return
-     */
-    IPage<T> setSize(long size);
-
-    /**
      * 获取每页显示条数
-     *
-     * @return
      */
     long getSize();
 
     /**
-     * 设置当前页
-     *
-     * @param current
-     * @return
+     * 设置每页显示条数
      */
-    IPage<T> setCurrent(long current);
+    IPage<T> setSize(long size);
 
     /**
      * 获取当前页
-     *
-     * @return
      */
     long getCurrent();
+
+    /**
+     * 设置当前页
+     */
+    IPage<T> setCurrent(long current);
 }
