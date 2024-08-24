@@ -10,12 +10,6 @@
     </parent>
 
     <artifactId>chushiy-orm</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>chushiy-orm-mybatis</module>
-        <module>chushiy-orm-mybatis-plus</module>
-        <module>chushiy-orm-mybatis-plus-join</module>
-    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

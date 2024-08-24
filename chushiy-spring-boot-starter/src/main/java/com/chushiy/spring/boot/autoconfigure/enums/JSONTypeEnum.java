@@ -29,6 +29,13 @@ public enum JSONTypeEnum {
      */
     JACKSON("jackson", "jackson");
 
+    /**
+     * json类型
+     */
     private final String name;
+
+    /**
+     * 描述
+     */
     private final String desc;
 }

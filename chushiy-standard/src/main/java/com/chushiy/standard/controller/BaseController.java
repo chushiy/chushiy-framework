@@ -18,7 +18,7 @@ import com.chushiy.standard.service.BaseService;
  */
 public abstract class BaseController<T extends PO> extends AbstractBaseController<T> {
 
-    public BaseController(Convert<T> convert, BaseService<T> service) {
+    protected BaseController(Convert<T> convert, BaseService<T> service) {
         super(convert, service);
     }
 

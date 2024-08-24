@@ -21,13 +21,20 @@ public enum DeleteFlagEnum {
     /**
      * 删除
      */
-    DELETE(1, "删除"),
+    DELETE("1", "删除"),
     /**
      * 正常
      */
-    NORMAL(0, "正常");
+    NORMAL("0", "正常");
 
-    private final Integer code;
+    /**
+     * code
+     */
+    private final String code;
+
+    /**
+     * 描述
+     */
     private final String desc;
 
 }

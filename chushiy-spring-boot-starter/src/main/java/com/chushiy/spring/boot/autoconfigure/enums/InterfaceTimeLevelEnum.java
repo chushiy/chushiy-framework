@@ -1,6 +1,8 @@
 package com.chushiy.spring.boot.autoconfigure.enums;
 
-import java.util.concurrent.TimeUnit;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
 /**
  * @Author 初时y
@@ -12,74 +14,69 @@ import java.util.concurrent.TimeUnit;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
+@ToString
+@Getter
+@RequiredArgsConstructor
 public enum InterfaceTimeLevelEnum {
-    ite1(1, "秒级", "0-1秒"),
-    ite2(2, "慢接口", "1-5秒"),
-    ite3(3, "慢接口", "5-10秒"),
-    ite4(4, "慢接口", "10-30秒"),
-    ite5(5, "慢接口", ">30秒");
+    /**
+     * 极快响应
+     */
+    ite1(1, "极快响应", "0ms - 100ms", 0, 100),
+    /**
+     * 较快响应
+     */
+    ite2(2, "较快响应", "101ms - 500ms", 101, 500),
+    /**
+     * 一般响应
+     */
+    ite3(3, "一般响应", "501ms - 1000ms", 501, 1000),
+    /**
+     * 较慢响应
+     */
+    ite4(4, "较慢响应", "1001ms - 3000ms", 1001, 3000),
+    /**
+     * 极慢响应
+     */
+    ite5(5, "极慢响应", "3001ms 以上", 3001, Integer.MAX_VALUE);
 
 
     /**
      * 等级
      */
-    private int level;
+    private final int level;
 
     /**
      * 描述
      */
-    private String desc;
+    private final String desc;
 
     /**
      * 区间
      */
-    private String section;
+    private final String section;
 
-    InterfaceTimeLevelEnum(int level, String desc, String section) {
-        this.level = level;
-        this.desc = desc;
-        this.section = section;
-    }
+    /**
+     * 最小时间 毫秒
+     */
+    private final int minTime;
+
+    /**
+     * 最大时间 毫秒
+     */
+    private final int maxTime;
 
     /**
      * 传入一个接口耗时毫秒返回一个接口耗时等级
      *
-     * @param ite
-     * @return
+     * @param interfaceTime 接口耗时毫秒
+     * @return InterfaceTimeLevelEnum
      */
     public static InterfaceTimeLevelEnum getInterfaceTimeLevel(long interfaceTime) {
-        long newInterfaceTime = TimeUnit.MILLISECONDS.toSeconds(interfaceTime);
-        if (newInterfaceTime <= 1) {
-            return InterfaceTimeLevelEnum.ite1;
-        } else if (newInterfaceTime <= 5) {
-            return InterfaceTimeLevelEnum.ite2;
-        } else if (newInterfaceTime <= 10) {
-            return InterfaceTimeLevelEnum.ite3;
-        } else if (newInterfaceTime <= 30) {
-            return InterfaceTimeLevelEnum.ite4;
-        } else {
-            return InterfaceTimeLevelEnum.ite5;
+        for (InterfaceTimeLevelEnum level : InterfaceTimeLevelEnum.values()) {
+            if (interfaceTime <= level.getMaxTime()) {
+                return level;
+            }
         }
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public String getSection() {
-        return section;
-    }
-
-    @Override
-    public String toString() {
-        return "接口耗时{" +
-                "等级:" + level +
-                ", 描述:'" + desc + '\'' +
-                ", 耗时区间:'" + section + '\'' +
-                '}';
+        return InterfaceTimeLevelEnum.ite5;
     }
 }

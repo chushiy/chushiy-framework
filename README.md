@@ -14,9 +14,9 @@ chushiy-framework
 ├── chusiy-cache -- 缓存
 ├── chusiy-mq -- 消息队列
 ├── chusiy-orm -- orm
-    ├── chushiy-orm-mybatis -- mybatis
-    ├── chushiy-orm-mybatis-plus -- mp
-    ├── chushiy-orm-mybatis-plus-join -- mpj
+├── chushiy-orm-mybatis -- mybatis
+├── chushiy-orm-mybatis-plus -- mp
+├── chushiy-orm-mybatis-plus-join -- mpj
 ├── chushiy-code-generator -- 代码生成器
 └── 
 

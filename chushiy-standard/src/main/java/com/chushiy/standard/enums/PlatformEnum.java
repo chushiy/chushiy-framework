@@ -1,8 +1,11 @@
 package com.chushiy.standard.enums;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.ToString;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @Author 初时y
@@ -17,37 +20,56 @@ import lombok.ToString;
  */
 @Getter
 @ToString
-@AllArgsConstructor
+@RequiredArgsConstructor
 public enum PlatformEnum {
 
-    Unkonwn(-1, "Unkonwn"),
-    IOS(1, "IOS"),
-    Android(2, "Android"),
-    PC(0, "PC"),
-    WECHAT(3, "WECHAT"),
+    /**
+     * Unkonwn
+     */
+    UNKONWN("Unkonwn","未知"),
+    /**
+     * IOS
+     */
+    IOS( "IOS", "IOS"),
+    /**
+     * Android
+     */
+    ANDROID( "Android", "Android"),
+    /**
+     * PC
+     */
+    PC("PC", "PC"),
+    /**
+     * WECHAT
+     */
+    WECHAT( "WECHAT", "微信"),
     ;
 
-    private int platform;
+    /**
+     * 客户端类型
+     */
+    private final String platform;
 
-    private String desc;
+    /**
+     * 描述
+     */
+    private final String desc;
 
-    public static PlatformEnum getByPlatform(int platform) {
-        if (platform == IOS.platform) {
-            return IOS;
+    private static final Map<String, PlatformEnum> PLATFORM_MAP = new HashMap<>();
+
+    static {
+        // 将所有的枚举值放入 Map 中进行缓存
+        for (PlatformEnum platformEnum : PlatformEnum.values()) {
+            PLATFORM_MAP.put(platformEnum.platform, platformEnum);
         }
-
-        if (platform == Android.platform) {
-            return Android;
-        }
-
-        if (platform == PC.platform) {
-            return PC;
-        }
-
-        if (platform == WECHAT.platform) {
-            return WECHAT;
-        }
-
-        return Unkonwn;
+    }
+    
+    /**
+     *
+     * @param platform 客户端类型
+     * @return PlatformEnum
+     */
+    public static PlatformEnum getByPlatform(String platform) {
+        return PLATFORM_MAP.getOrDefault(platform, UNKONWN);
     }
 }

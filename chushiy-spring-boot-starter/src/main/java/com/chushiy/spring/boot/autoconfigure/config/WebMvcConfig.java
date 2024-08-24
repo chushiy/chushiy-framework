@@ -1,7 +1,7 @@
 package com.chushiy.spring.boot.autoconfigure.config;
 
 import com.chushiy.spring.boot.autoconfigure.converter.StringToLocalDateConverter;
-import com.chushiy.spring.boot.autoconfigure.properties.ChuShiYProperties;
+import com.chushiy.spring.boot.autoconfigure.properties.ChuShiyProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @RequiredArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    private final ChuShiYProperties chuShiYProperties;
+    private final ChuShiyProperties chuShiYProperties;
 
     @Override
     public void addFormatters(FormatterRegistry registry) {

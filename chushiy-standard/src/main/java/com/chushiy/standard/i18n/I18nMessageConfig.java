@@ -35,15 +35,18 @@ public class I18nMessageConfig {
      * TODO 扩展 配置文件 硬编码
      */
     static {
-        HashMap<String, String> zhCNmessageMap = new HashMap<>();
-        zhCNmessageMap.put(ResponseConstant.SUCCESS_MESSAGE, "success!");
-        zhCNmessageMap.put("失败!", "fail!");
+        // 中文
+        Map<String, String> zhCNmessageMap = new HashMap<>();
+        zhCNmessageMap.put("success!", ResponseConstant.SUCCESS_MESSAGE);
+        zhCNmessageMap.put("fail!", "失败!");
         internationalizationMap.put(ResponseConstant.DEFAULT_LANGUAGE.toString(), zhCNmessageMap);
 
-        HashMap<String, String> enCNmessageMap = new HashMap<>();
-        enCNmessageMap.put("success!", ResponseConstant.SUCCESS_MESSAGE);
-        enCNmessageMap.put("fail!", "失败!");
-        internationalizationMap.put(ResponseConstant.DEFAULT_LANGUAGE.toString(), enCNmessageMap);
+        // 英文
+        Map<String, String> enUSmessageMap = new HashMap<>();
+        enUSmessageMap.put(ResponseConstant.SUCCESS_MESSAGE, "success!");
+        enUSmessageMap.put("失败!", "fail!");
+        // 美国英文
+        internationalizationMap.put(Locale.US.toString(), enUSmessageMap);
     }
 
     /**

@@ -40,9 +40,13 @@ public class CostTimeAspect {
             // 计算耗时
             long cost = System.currentTimeMillis() - beginTime;
             InterfaceTimeLevelEnum interfaceTimeLevel = InterfaceTimeLevelEnum.getInterfaceTimeLevel(cost);
-            // 慢接口
-            if (interfaceTimeLevel.getLevel() > 1) {
-                log.warn("类:[{}]，方法:[{}]，接口耗时:[{}]毫秒。！！！接口耗时等级:{}", className, method, cost, interfaceTimeLevel);
+            if (log.isDebugEnabled()) {
+                // 慢接口
+                if (interfaceTimeLevel.getLevel() > InterfaceTimeLevelEnum.ite3.getLevel()) {
+                    log.warn("类:[{}]，方法:[{}]，接口耗时:[{}]毫秒！接口耗时等级:{}", className, method, cost, interfaceTimeLevel);
+                } else {
+                    log.info("类:[{}]，方法:[{}] 接口耗时:[{}] 毫秒", className, method, cost);
+                }
             } else {
                 log.info("类:[{}]，方法:[{}] 接口耗时:[{}] 毫秒", className, method, cost);
             }

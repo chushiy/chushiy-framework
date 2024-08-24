@@ -183,6 +183,12 @@ public class Assert {
         }
     }
 
+    public static <X extends Throwable> void isNotBlank(String text, Supplier<? extends X> supplier) throws X {
+        if (StringUtils.isBlank(text)) {
+            throw supplier.get();
+        }
+    }
+
     /**
      * 不为空白字符串 ""也不行
      *
@@ -572,6 +578,19 @@ public class Assert {
     public static void isEmpty(Object object, Exception exception) throws Exception {
         if (ObjectUtils.isNotEmpty(object)) {
             throw exception;
+        }
+    }
+
+    /**
+     * 为空
+     *
+     * @param object   需要检查的对象
+     * @param consumer 消费对象
+     * @throws Exception 指定的异常
+     */
+    public static void isEmpty(Object object, Consumer consumer) throws Exception {
+        if (ObjectUtils.isEmpty(object)) {
+            consumer.accept();
         }
     }
 

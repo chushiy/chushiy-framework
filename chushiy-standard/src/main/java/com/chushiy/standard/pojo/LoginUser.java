@@ -24,12 +24,13 @@ public class LoginUser implements POJO {
     private Long userId;
 
     /**
-     * 用户昵称
+     * 昵称
      */
     private String nickName;
 
     /**
      * 用户名
+     * 唯一
      */
     private String userName;
 
