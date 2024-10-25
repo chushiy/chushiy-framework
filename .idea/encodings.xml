@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/chushiy-json/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-json/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis-plus/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis-plus/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm-mybatis/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-orm/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-standard/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-standard/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-swagger/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-swagger/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-wechat/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chushiy-wechat/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chusiy-oss-spring-boot-starter/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/chusiy-oss-spring-boot-starter/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
+  </component>
+</project>
