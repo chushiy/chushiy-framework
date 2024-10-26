@@ -1,5 +1,7 @@
 package com.chushiy.standard.pojo.page;
 
+import com.chushiy.standard.util.Assert;
+
 import java.util.List;
 
 /**
@@ -21,7 +23,19 @@ public class PageResult<T> implements IPage<T> {
     }
 
     public PageResult(IPage<T> page) {
+        Assert.isNotEmpty(page);
         this.page = page;
+    }
+
+    public PageResult(List<T> records, Long total, Long size, Long current) {
+        Assert.isNotEmpty(records);
+        this.page.setRecords(records);
+        Assert.isNotEmpty(total);
+        this.page.setTotal(total);
+        Assert.isNotEmpty(size);
+        this.page.setSize(size);
+        Assert.isNotEmpty(current);
+        this.page.setCurrent(current);
     }
 
     @Override

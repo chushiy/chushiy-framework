@@ -22,9 +22,21 @@ import java.util.function.Supplier;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-public class Assert {
+public class Assert extends cn.hutool.core.lang.Assert {
 
     protected Assert() {
+    }
+
+    /**
+     * 是否为true
+     *
+     * @param expression 布尔表达式
+     * @param message    错误信息
+     */
+    public static void isTrue(boolean expression) {
+        if (!expression) {
+            throw new IllegalArgumentException();
+        }
     }
 
     /**
@@ -290,6 +302,17 @@ public class Assert {
     /**
      * 为空
      *
+     * @param text 需要检查的字符串    需要检查的字符串
+     */
+    public static void isEmpty(String text) {
+        if (StringUtils.isNotEmpty(text)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * 为空
+     *
      * @param text    需要检查的字符串    需要检查的字符串
      * @param message 错误信息
      */
@@ -340,6 +363,17 @@ public class Assert {
      * 为空
      *
      * @param collection 需要检查的集合
+     */
+    public static void isEmpty(Collection<?> collection) {
+        if (CollectionUtils.isNotEmpty(collection)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * 为空
+     *
+     * @param collection 需要检查的集合
      * @param message    错误信息
      */
     public static void isEmpty(Collection<?> collection, String message) {
@@ -382,6 +416,17 @@ public class Assert {
     public static void isEmpty(Collection<?> collection, Exception exception) throws Exception {
         if (CollectionUtils.isNotEmpty(collection)) {
             throw exception;
+        }
+    }
+
+    /**
+     * 不为空
+     *
+     * @param collection 需要检查的集合
+     */
+    public static void isNotEmpty(Collection<?> collection) {
+        if (CollectionUtils.isEmpty(collection)) {
+            throw new IllegalArgumentException();
         }
     }
 
@@ -538,6 +583,18 @@ public class Assert {
      * @param object  需要检查的对象
      * @param message 错误信息
      */
+    public static void isEmpty(Object object) {
+        if (ObjectUtils.isNotEmpty(object)) {
+            throw new IllegalArgumentException();
+        }
+    }
+
+    /**
+     * 为空
+     *
+     * @param object  需要检查的对象
+     * @param message 错误信息
+     */
     public static void isEmpty(Object object, String message) {
         if (ObjectUtils.isNotEmpty(object)) {
             throw new IllegalArgumentException(message);
@@ -591,6 +648,17 @@ public class Assert {
     public static void isEmpty(Object object, Consumer consumer) throws Exception {
         if (ObjectUtils.isEmpty(object)) {
             consumer.accept();
+        }
+    }
+
+    /**
+     * 不为空
+     *
+     * @param object 需要检查的对象
+     */
+    public static void isNotEmpty(Object object) {
+        if (ObjectUtils.isEmpty(object)) {
+            throw new IllegalArgumentException();
         }
     }
 
