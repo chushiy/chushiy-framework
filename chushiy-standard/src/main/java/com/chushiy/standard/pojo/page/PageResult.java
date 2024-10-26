@@ -38,6 +38,10 @@ public class PageResult<T> implements IPage<T> {
         this.page.setCurrent(current);
     }
 
+    public PageResult(com.baomidou.mybatisplus.core.metadata.IPage<T> page) {
+        this(page.getRecords(), page.getTotal(), page.getSize(), page.getCurrent());
+    }
+
     @Override
     public List<T> getRecords() {
         return this.page.getRecords();

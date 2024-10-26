@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1a1b1a-f2f6-4be9-8637-d4e186d51842" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +90,7 @@
       <workItem from="1729751580516" duration="124000" />
       <workItem from="1729828014400" duration="97000" />
       <workItem from="1729828141134" duration="597000" />
-      <workItem from="1729926076119" duration="743000" />
+      <workItem from="1729926076119" duration="1570000" />
     </task>
     <servers />
   </component>
