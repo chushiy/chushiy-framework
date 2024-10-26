@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1a1b1a-f2f6-4be9-8637-d4e186d51842" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/util/Assert.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/util/Assert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -89,7 +89,7 @@
       <workItem from="1729751580516" duration="124000" />
       <workItem from="1729828014400" duration="97000" />
       <workItem from="1729828141134" duration="597000" />
-      <workItem from="1729926076119" duration="656000" />
+      <workItem from="1729926076119" duration="743000" />
     </task>
     <servers />
   </component>
