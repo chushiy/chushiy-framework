@@ -5,36 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1a1b1a-f2f6-4be9-8637-d4e186d51842" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/chushiy-common/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/AES.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/Crypto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/DES.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/MD5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/RSA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/enums/CryptoType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/util/CryptoUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/test/java/com/chushiy/crypto/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/ControllerResponseAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/CryptoResponseBodyAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/ControllerResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CryptoResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/constant/PageConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/enums/BasePOFieldEnum.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/ChuShiyMybatisPlusJoinMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/ChuShiyMybatisPlusJoinMetaObjectHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/config/ChuShiyMybatisPlusJoinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/config/ChuShiyMybatisPlusJoinConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/RestControllerResponseAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CostTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CostTime.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/EnableRestControllerResponseAdvice.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/BasePO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/Result.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/Page.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/resources/baseTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/resources/baseTable.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +59,7 @@
     "project.structure.last.edited": "SDKs",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "http.proxy",
     "spring.configuration.checksum": "7ac0ce6e6fa9ce06135cb38b2671c66c",
     "vue.rearranger.settings.migration": "true"
   }
@@ -179,7 +150,7 @@
       <workItem from="1730091422639" duration="2407000" />
       <workItem from="1730517352263" duration="892000" />
       <workItem from="1730700629213" duration="487000" />
-      <workItem from="1730734230588" duration="13238000" />
+      <workItem from="1730734230588" duration="14436000" />
     </task>
     <servers />
   </component>
