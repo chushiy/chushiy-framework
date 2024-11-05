@@ -37,7 +37,7 @@ public class Result<T> implements VO {
      */
     private static Result<Void> success = new Result<>();
     /**
-     * 代码 使用字符串类型
+     * 编码 使用字符串类型
      * 使用int类型有弊端 0001
      */
     private String code;
@@ -50,7 +50,8 @@ public class Result<T> implements VO {
      */
     private Long timestamp;
     /**
-     * 扩展
+     * 扩展参数
+     * 例如 version等等
      */
     private Map<String, Object> extra;
     /**
@@ -58,7 +59,7 @@ public class Result<T> implements VO {
      */
     private T data;
 
-    private Result() {
+    protected Result() {
         this.code = ResponseConstant.SUCCESS_CODE;
         this.timestamp = System.currentTimeMillis();
         this.message = ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE);
@@ -98,29 +99,39 @@ public class Result<T> implements VO {
         this.message = message;
     }
 
+    private Result(String code, String message, Map<String, Object> extra) {
+        this.code = code;
+        this.timestamp = System.currentTimeMillis();
+        this.message = message;
+        this.extra = extra;
+    }
+
+    private Result(String code, String message, Map<String, Object> extra, T data) {
+        this.code = code;
+        this.timestamp = System.currentTimeMillis();
+        this.message = message;
+        this.extra = extra;
+        this.data = data;
+    }
+
     public static Result<Void> success() {
-        if (success != null) {
-            return success;
-        }
-        synchronized (Result.class) {
-            if (success != null) {
-                return success;
-            }
-            success = new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE));
-            return success;
-        }
+        return ok();
     }
 
     public static Result<Void> success(String message) {
-        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), Result.EMPTY_DATA);
+        return ok(message);
     }
 
     public static <T> Result<T> success(T data) {
-        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE), data);
+        return ok(data);
+    }
+
+    public static <T> Result<T> success(Map<String, Object> extra) {
+        return ok(extra);
     }
 
     public static <T> Result<T> success(String message, T data) {
-        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data);
+        return ok(message, data);
     }
 
     public static Result<Void> ok() {
@@ -142,6 +153,10 @@ public class Result<T> implements VO {
 
     public static <T> Result<T> ok(T data) {
         return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE), data);
+    }
+
+    public static <T> Result<T> ok(Map<String, Object> extra) {
+        return new Result<>(ResponseConstant.SUCCESS_CODE, ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE), extra);
     }
 
     public static <T> Result<T> ok(String message, T data) {
