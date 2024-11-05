@@ -4,7 +4,7 @@ package com.chushiy.orm.mybatis.config;
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/5/13 下午 6:33
- * @Description TODO
+ * @Description chushiy Mybatis配置
  * @ProjectName chushiy-framework
  * @PackageName com.chushiy.orm.mybatis.config
  * @ClassName ChuShiyMybatisConfig.java

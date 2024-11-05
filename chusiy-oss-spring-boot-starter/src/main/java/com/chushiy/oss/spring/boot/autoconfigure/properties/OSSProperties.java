@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/29 下午 8:42
  * @Description OSS配置属性
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.oss.spring.boot.autoconfigure.properties
  * @ClassName OSSProperties.java
  * @ProductName IntelliJ IDEA

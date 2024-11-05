@@ -9,7 +9,7 @@ import java.util.List;
  * @Email 2283873481@qq.com
  * @DateTime 2024/2/8 下午 5:09
  * @Description 分页统一返回结果
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.pojo.page
  * @ClassName PageResult.java
  * @ProductName IntelliJ IDEA

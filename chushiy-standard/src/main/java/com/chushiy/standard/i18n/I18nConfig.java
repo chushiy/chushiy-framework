@@ -9,7 +9,7 @@ import java.util.Locale;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/13 下午 8:26
  * @Description 国际化配置
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.i18n
  * @ClassName I18nConfig.java
  * @ProductName IntelliJ IDEA

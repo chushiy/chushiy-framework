@@ -7,7 +7,7 @@ import java.util.Locale;
  * @Email 2283873481@qq.com
  * @DateTime 2024/2/8 下午 6:44
  * @Description 响应常量
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.constant
  * @ClassName ResponseConstant.java
  * @ProductName IntelliJ IDEA

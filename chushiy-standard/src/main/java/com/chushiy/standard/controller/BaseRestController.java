@@ -12,7 +12,7 @@ import com.chushiy.standard.service.BaseService;
  * @Email 2283873481@qq.com
  * @DateTime 2024/1/23 下午 7:22
  * @Description restful controller基类
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.controller
  * @ClassName BaseRestController.java
  * @ProductName IntelliJ IDEA

@@ -5,7 +5,7 @@ package com.chushiy.swagger.annotation;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/29 下午 8:13
  * @Description 开启swagger2
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.swagger.annotation
  * @ClassName EnableSwagger2.java
  * @ProductName IntelliJ IDEA

@@ -8,7 +8,7 @@ import com.chushiy.standard.pojo.LoginUser;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 5:26
  * @Description 线程上下文
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard
  * @ClassName ThreadContext.java
  * @ProductName IntelliJ IDEA

@@ -7,7 +7,7 @@ import lombok.RequiredArgsConstructor;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 6:38
  * @Description 默认错误
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.exception.support
  * @ClassName DefaultError.java
  * @ProductName IntelliJ IDEA

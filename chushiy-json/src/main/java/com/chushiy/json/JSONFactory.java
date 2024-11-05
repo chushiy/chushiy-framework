@@ -11,7 +11,7 @@ import java.util.ServiceLoader;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 上午 11:38
  * @Description 工厂模式 返回支持的JSON对象 系统默认只支持一种json（对外包装数据时） 使用时随意
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.json
  * @ClassName JSONFactory.java
  * @ProductName IntelliJ IDEA

@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 上午 11:10
  * @Description 自动配置类
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure
  * @ClassName ChuShiyAutoConfigure.java
  * @ProductName IntelliJ IDEA

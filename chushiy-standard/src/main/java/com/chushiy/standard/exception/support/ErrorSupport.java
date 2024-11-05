@@ -5,7 +5,7 @@ package com.chushiy.standard.exception.support;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 6:39
  * @Description 错误支持 策略模式 提供扩展
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.exception.support
  * @ClassName ErrorSupport.java
  * @ProductName IntelliJ IDEA

@@ -12,7 +12,7 @@ import java.util.List;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/29 下午 8:47
  * @Description OSS操作模版
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.oss.spring.boot.autoconfigure.core
  * @ClassName OSSTemplate.java
  * @ProductName IntelliJ IDEA

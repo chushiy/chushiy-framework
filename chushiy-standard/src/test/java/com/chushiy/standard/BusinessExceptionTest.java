@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/16 下午 5:08
- * @Description TODO
- * @ProjectName chushiy
+ * @Description test
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard
  * @ClassName BusinessExceptionTest.java
  * @ProductName IntelliJ IDEA

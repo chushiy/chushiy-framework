@@ -8,7 +8,7 @@ import lombok.ToString;
  * @Author 初时y
  * @DateTime 2023/11/27 下午 8:28
  * @Description 接口耗时等级枚举
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure.enums
  * @ClassName InterfaceTimeLevelConstant.java
  * @ProductName IntelliJ IDEA

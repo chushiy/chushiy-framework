@@ -10,7 +10,7 @@ import org.springframework.web.cors.CorsConfiguration;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 2:51
  * @Description 系统配置文件
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure.properties
  * @ClassName ChuShiyProperties.java
  * @ProductName IntelliJ IDEA

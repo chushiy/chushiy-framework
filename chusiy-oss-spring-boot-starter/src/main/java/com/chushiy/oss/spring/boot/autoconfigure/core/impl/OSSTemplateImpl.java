@@ -25,7 +25,7 @@ import java.util.List;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/29 下午 8:50
  * @Description OSS操作模版实现 参考 https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.oss.spring.boot.autoconfigure.core.impl
  * @ClassName OSSTemplateImpl.java
  * @ProductName IntelliJ IDEA

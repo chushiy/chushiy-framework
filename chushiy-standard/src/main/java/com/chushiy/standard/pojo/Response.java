@@ -5,7 +5,7 @@ package com.chushiy.standard.pojo;
  * @Email 2283873481@qq.com
  * @DateTime 2024/1/23 下午 7:18
  * @Description response基类
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.pojo
  * @ClassName Response.java
  * @ProductName IntelliJ IDEA

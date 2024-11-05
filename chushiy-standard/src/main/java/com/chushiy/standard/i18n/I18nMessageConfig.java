@@ -15,7 +15,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/13 下午 7:32
  * @Description i18n信息配置
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.i18n
  * @ClassName I18nMessageConfig.java
  * @ProductName IntelliJ IDEA

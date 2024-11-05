@@ -17,7 +17,8 @@ chushiy-framework
 ├── chushiy-orm-mybatis -- mybatis
 ├── chushiy-orm-mybatis-plus -- mp
 ├── chushiy-orm-mybatis-plus-join -- mpj
-├── chushiy-code-generator -- 代码生成器
+├── chushiy-common -- 通用模块
+├── chushiy-crypto -- 加解密
 └── 
 
 

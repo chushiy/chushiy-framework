@@ -12,7 +12,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 2:47
  * @Description redis配置
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure.redis
  * @ClassName RedisConfig.java
  * @ProductName IntelliJ IDEA

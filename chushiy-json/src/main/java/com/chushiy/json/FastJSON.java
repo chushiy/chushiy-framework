@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 上午 11:44
  * @Description fast-JSON实现
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.json
  * @ClassName FastJSON.java
  * @ProductName IntelliJ IDEA

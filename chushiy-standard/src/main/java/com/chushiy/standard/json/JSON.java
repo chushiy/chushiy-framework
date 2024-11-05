@@ -10,7 +10,7 @@ import java.io.Serializable;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 上午 11:30
  * @Description JSON接口
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.json
  * @ClassName JSON.java
  * @ProductName IntelliJ IDEA

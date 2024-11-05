@@ -25,7 +25,7 @@ import java.io.IOException;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/24 下午 5:18
  * @Description 客户端信息
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure.filter
  * @ClassName ClientInformationFilter.java
  * @ProductName IntelliJ IDEA

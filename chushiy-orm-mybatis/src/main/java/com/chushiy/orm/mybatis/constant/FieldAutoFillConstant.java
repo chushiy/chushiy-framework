@@ -4,7 +4,7 @@ package com.chushiy.orm.mybatis.constant;
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/5/13 下午 6:26
- * @Description TODO
+ * @Description 字段自动填充常量
  * @ProjectName chushiy-framework
  * @PackageName com.chushiy.orm.mybatis.constant
  * @ClassName FieldAutoFillConstant.java

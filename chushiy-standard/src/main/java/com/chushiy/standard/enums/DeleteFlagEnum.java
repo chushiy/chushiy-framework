@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/31 下午 10:35
  * @Description 删除标识(逻辑删除)
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.enums
  * @ClassName DeleteFlagEnum.java
  * @ProductName IntelliJ IDEA

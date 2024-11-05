@@ -9,8 +9,8 @@ import java.util.Locale;
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/13 下午 7:53
- * @Description TODO
- * @ProjectName chushiy
+ * @Description test
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard
  * @ClassName LocaleTest.java
  * @ProductName IntelliJ IDEA

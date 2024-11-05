@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @Email 2283873481@qq.com
  * @DateTime 2024/2/6 下午 10:37
  * @Description 业务异常
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.exception
  * @ClassName BusinessException.java
  * @ProductName IntelliJ IDEA

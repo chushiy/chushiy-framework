@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/13 下午 8:12
- * @Description TODO
- * @ProjectName chushiy
+ * @Description test
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard
  * @ClassName ResultTest.java
  * @ProductName IntelliJ IDEA
@@ -21,7 +21,6 @@ public class ResultTest {
     @Test
     void testI18nMessage() {
         // I18nConfig.language =Loca
-        Result<Void> success = Result.success();
-        log.info("success:{}", success);
+        log.info("success:{}", Result.ok(new Object()));
     }
 }

@@ -12,7 +12,7 @@ import java.util.ServiceLoader;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/13 下午 5:58
  * @Description 统一返回结果国际化message组装供应商
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.spi
  * @ClassName ResultI18nMessageAssemblerProvider.java
  * @ProductName IntelliJ IDEA

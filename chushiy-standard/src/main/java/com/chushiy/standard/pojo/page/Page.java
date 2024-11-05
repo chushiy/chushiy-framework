@@ -11,7 +11,7 @@ import java.util.List;
  * @Email 2283873481@qq.com
  * @DateTime 2024/3/12 下午 11:02
  * @Description 默认分页实现
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.pojo.page
  * @ClassName Page.java
  * @ProductName IntelliJ IDEA
