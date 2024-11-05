@@ -51,6 +51,8 @@
         <module>chushiy-orm-mybatis-plus</module>
         <module>chushiy-orm-mybatis-plus-join</module>
         <module>chushiy-wechat</module>
+        <module>chushiy-crypto</module>
+        <module>chushiy-common</module>
     </modules>
 
     <properties>
@@ -92,6 +94,7 @@
         <commons-collections4.version>4.4</commons-collections4.version>
         <gson.version>2.10.1</gson.version>
         <jackson.version>2.10.1</jackson.version>
+        <bcprov.version>1.78.1</bcprov.version>
     </properties>
 
     <dependencyManagement>
@@ -163,6 +166,20 @@
                 <!--    <groupId>com.chushiy</groupId>-->
                 <groupId>io.github.chushiy</groupId>
                 <artifactId>chushiy-wechat</artifactId>
+                <version>${chushiy.version}</version>
+            </dependency>
+
+            <dependency>
+                <!--    <groupId>com.chushiy</groupId>-->
+                <groupId>io.github.chushiy</groupId>
+                <artifactId>chushiy-common</artifactId>
+                <version>${chushiy.version}</version>
+            </dependency>
+
+            <dependency>
+                <!--    <groupId>com.chushiy</groupId>-->
+                <groupId>io.github.chushiy</groupId>
+                <artifactId>chushiy-crypto</artifactId>
                 <version>${chushiy.version}</version>
             </dependency>
 
@@ -268,6 +285,13 @@
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${jackson.version}</version>
+            </dependency>
+
+            <!-- bcprov加密算法库 -->
+            <dependency>
+                <groupId>org.bouncycastle</groupId>
+                <artifactId>bcprov-jdk18on</artifactId>
+                <version>${bcprov.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

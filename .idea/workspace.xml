@@ -5,8 +5,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ce1a1b1a-f2f6-4be9-8637-d4e186d51842" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/chushiy-common/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/AES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/Crypto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/DES.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/MD5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/RSA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/enums/CryptoType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/main/java/com/chushiy/crypto/util/CryptoUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-crypto/src/test/java/com/chushiy/crypto/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/ControllerResponseAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/CryptoResponseBodyAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/ControllerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CryptoResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/constant/PageConstant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/enums/BasePOFieldEnum.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/ChuShiyMybatisPlusJoinMetaObjectHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/ChuShiyMybatisPlusJoinMetaObjectHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/config/ChuShiyMybatisPlusJoinConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-orm-mybatis-plus-join/src/main/java/com/chushiy/orm/mybatisplusjoin/config/ChuShiyMybatisPlusJoinConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/advice/RestControllerResponseAdvice.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CostTime.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/CostTime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-spring-boot-starter/src/main/java/com/chushiy/spring/boot/autoconfigure/annotation/EnableRestControllerResponseAdvice.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/chushiy-standard/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/BasePO.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/BasePO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/Result.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/Result.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/Page.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/Page.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageRequest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/java/com/chushiy/standard/pojo/page/PageResult.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chushiy-standard/src/main/resources/baseTable.txt" beforeDir="false" afterPath="$PROJECT_DIR$/chushiy-standard/src/main/resources/baseTable.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +44,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -47,6 +78,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "1.8",
     "last_opened_file_path": "G:/code/chushiy-framework/chushiy-framework",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -57,24 +89,76 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "spring.configuration.checksum": "5561514df0ec44179e3f5a1cce8f0f1b",
+    "spring.configuration.checksum": "7ac0ce6e6fa9ce06135cb38b2671c66c",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="chushiy-swagger" />
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.chushiy.standard.constant" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Test">
+    <configuration name="CryptoUtils (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chushiy.crypto.util.CryptoUtils" />
+      <module name="chushiy-crypto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chushiy.crypto.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="chushiy-swagger" />
-      <option name="filePath" />
+    <configuration name="CryptoUtils (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chushiy.crypto.util.CryptoUtils" />
+      <module name="chushiy-crypto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chushiy.crypto.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CryptoUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chushiy.crypto.util.CryptoUtils" />
+      <module name="chushiy-crypto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chushiy.crypto.util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.chushiy.crypto.Test" />
+      <module name="chushiy-crypto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.chushiy.crypto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.CryptoUtils" />
+        <item itemvalue="Application.CryptoUtils (2)" />
+        <item itemvalue="Application.CryptoUtils (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SshConsoleOptionsProvider">
@@ -90,7 +174,12 @@
       <workItem from="1729751580516" duration="124000" />
       <workItem from="1729828014400" duration="97000" />
       <workItem from="1729828141134" duration="597000" />
-      <workItem from="1729926076119" duration="1570000" />
+      <workItem from="1729926076119" duration="4295000" />
+      <workItem from="1729933960300" duration="3824000" />
+      <workItem from="1730091422639" duration="2407000" />
+      <workItem from="1730517352263" duration="892000" />
+      <workItem from="1730700629213" duration="487000" />
+      <workItem from="1730734230588" duration="13238000" />
     </task>
     <servers />
   </component>

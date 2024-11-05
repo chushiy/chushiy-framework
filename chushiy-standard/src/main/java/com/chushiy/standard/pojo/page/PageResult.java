@@ -15,7 +15,7 @@ import java.util.List;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-public class PageResult<T> implements IPage<T> {
+public class PageResult<T> extends Page<T> {
 
     private IPage<T> page;
 
@@ -28,7 +28,8 @@ public class PageResult<T> implements IPage<T> {
     }
 
     public PageResult(List<T> records, Long total, Long size, Long current) {
-        Assert.isNotEmpty(records);
+        this.page = new Page<>();
+        Assert.notNull(records);
         this.page.setRecords(records);
         Assert.isNotEmpty(total);
         this.page.setTotal(total);

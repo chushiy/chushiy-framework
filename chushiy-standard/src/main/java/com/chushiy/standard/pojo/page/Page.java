@@ -1,5 +1,9 @@
 package com.chushiy.standard.pojo.page;
 
+import com.chushiy.standard.constant.PageConstant;
+import com.chushiy.standard.util.Assert;
+import org.apache.commons.lang3.ObjectUtils;
+
 import java.util.List;
 
 /**
@@ -14,6 +18,7 @@ import java.util.List;
  * @Version 1.0
  */
 public class Page<T> implements IPage<T> {
+
     private List<T> records;
 
     private long total;
@@ -51,6 +56,9 @@ public class Page<T> implements IPage<T> {
 
     @Override
     public long getSize() {
+        if (ObjectUtils.isEmpty(this.size)) {
+            return PageConstant.DEFAULT_CURRENT;
+        }
         return this.size;
     }
 
@@ -62,6 +70,23 @@ public class Page<T> implements IPage<T> {
 
     @Override
     public long getCurrent() {
+        if (ObjectUtils.isEmpty(this.current)) {
+            return PageConstant.DEFAULT_CURRENT;
+        }
         return this.current;
+    }
+
+    public Page() {
+    }
+
+    public Page(List<T> records, long total, long size, long current) {
+        Assert.isNotEmpty(records);
+        this.setRecords(records);
+        Assert.isNotEmpty(total);
+        this.setTotal(total);
+        Assert.isNotEmpty(size);
+        this.setSize(size);
+        Assert.isNotEmpty(current);
+        this.setCurrent(current);
     }
 }

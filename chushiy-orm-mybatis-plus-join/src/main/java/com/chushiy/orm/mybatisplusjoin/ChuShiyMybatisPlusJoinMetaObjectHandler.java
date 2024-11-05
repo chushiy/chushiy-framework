@@ -20,7 +20,6 @@ import java.time.LocalDateTime;
  */
 @Slf4j
 public abstract class ChuShiyMybatisPlusJoinMetaObjectHandler implements MetaObjectHandler {
-
     @Override
     public void insertFill(MetaObject metaObject) {
         this.strictInsertFill(metaObject, "createTime", LocalDateTime::now, LocalDateTime.class);
@@ -32,4 +31,5 @@ public abstract class ChuShiyMybatisPlusJoinMetaObjectHandler implements MetaObj
         this.strictUpdateFill(metaObject, "updateTime", LocalDateTime::now, LocalDateTime.class);
         this.strictUpdateFill(metaObject, "updateBy", SecurityUtils::getUserName, String.class);
     }
+
 }

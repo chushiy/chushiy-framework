@@ -25,6 +25,11 @@
     <dependencies>
 
         <dependency>
+            <groupId>io.github.chushiy</groupId>
+            <artifactId>chushiy-common</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
             <optional>true</optional>
@@ -35,23 +40,7 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-collections4</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>cn.hutool</groupId>
-            <artifactId>hutool-all</artifactId>
-        </dependency>
 
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
         <!-- TODO 后续解耦开JSON使用自己的JSON模块 -->
         <dependency>
             <groupId>com.alibaba</groupId>

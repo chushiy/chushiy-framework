@@ -1,6 +1,6 @@
 package com.chushiy.spring.boot.autoconfigure.advice;
 
-import com.chushiy.spring.boot.autoconfigure.annotation.EnableRestControllerResponseAdvice;
+import com.chushiy.spring.boot.autoconfigure.annotation.ControllerResponse;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,25 +16,26 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/3/24 上午 6:33
- * @Description restful控制器响应包装
- * @ProjectName chushiy
+ * @DateTime 2024/11/5 14:20
+ * @Description controller包装响应
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.autoconfigure.advice
- * @ClassName RestControllerResponseAdvice.java
+ * @ClassName ControllerResponseAdvice.java
  * @ProductName IntelliJ IDEA
- * @Version 1.0
+ * @Version 1.0.0
  */
-public class RestControllerResponseAdvice implements ResponseBodyAdvice<Object> {
+public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
+
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
         boolean isResult = returnType.getParameterType().isAssignableFrom(Result.class);
         boolean isModelAndView = returnType.getParameterType().equals(ModelAndView.class);
-        // region 如果加了@EnableRestControllerResponseAdvice enable = true正常执行 =false则不包装 没有加该注解也进行包装
-        EnableRestControllerResponseAdvice enableRestControllerResponseAdvice =
-                returnType.getMethod().getAnnotation(EnableRestControllerResponseAdvice.class);
+        // region 如果加了@ControllerResponse enable = true正常执行 =false则不包装 没有加该注解也进行包装
+        ControllerResponse controllerResponse =
+                returnType.getMethod().getAnnotation(ControllerResponse.class);
         // endregion
         return !isResult && !isModelAndView
-                && (ObjectUtils.isEmpty(enableRestControllerResponseAdvice) || enableRestControllerResponseAdvice.enable());
+                && (ObjectUtils.isEmpty(controllerResponse) || controllerResponse.enable());
     }
 
     @Override

@@ -9,12 +9,14 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.Map;
+
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
  * @DateTime 2024/2/8 下午 5:09
  * @Description 统一返回结果 支持国际化使用JAVA SPI机制 提供扩展性
- * @ProjectName chushiy
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.standard.pojo
  * @ClassName Result.java
  * @ProductName IntelliJ IDEA
@@ -38,11 +40,19 @@ public class Result<T> implements VO {
      * 代码 使用字符串类型
      * 使用int类型有弊端 0001
      */
-    private final String code;
+    private String code;
     /**
      * 消息
      */
     private String message;
+    /**
+     * 时间戳
+     */
+    private Long timestamp;
+    /**
+     * 扩展
+     */
+    private Map<String, Object> extra;
     /**
      * 数据
      */
@@ -50,11 +60,13 @@ public class Result<T> implements VO {
 
     private Result() {
         this.code = ResponseConstant.SUCCESS_CODE;
+        this.timestamp = System.currentTimeMillis();
         this.message = ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE);
     }
 
     private Result(String message) {
         this.code = ResponseConstant.SUCCESS_CODE;
+        this.timestamp = System.currentTimeMillis();
         this.message = message;
     }
 
@@ -62,24 +74,27 @@ public class Result<T> implements VO {
         if (data instanceof ErrorSupport) {
             ErrorSupport errorSupport = (ErrorSupport) data;
             this.code = ResponseConstant.SUCCESS_CODE;
+            this.timestamp = System.currentTimeMillis();
             this.data = data;
             this.message = ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, errorSupport.getMessage());
         } else {
             this.code = ResponseConstant.SUCCESS_CODE;
+            this.timestamp = System.currentTimeMillis();
             this.data = data;
             this.message = ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE);
         }
     }
 
-
     private Result(String message, T data) {
         this.code = ResponseConstant.SUCCESS_CODE;
+        this.timestamp = System.currentTimeMillis();
         this.message = message;
         this.data = data;
     }
 
     private Result(String code, String message) {
         this.code = code;
+        this.timestamp = System.currentTimeMillis();
         this.message = message;
     }
 
@@ -105,6 +120,31 @@ public class Result<T> implements VO {
     }
 
     public static <T> Result<T> success(String message, T data) {
+        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data);
+    }
+
+    public static Result<Void> ok() {
+        if (success != null) {
+            return success;
+        }
+        synchronized (Result.class) {
+            if (success != null) {
+                return success;
+            }
+            success = new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE));
+            return success;
+        }
+    }
+
+    public static Result<Void> ok(String message) {
+        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), Result.EMPTY_DATA);
+    }
+
+    public static <T> Result<T> ok(T data) {
+        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, ResponseConstant.SUCCESS_MESSAGE), data);
+    }
+
+    public static <T> Result<T> ok(String message, T data) {
         return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data);
     }
 
