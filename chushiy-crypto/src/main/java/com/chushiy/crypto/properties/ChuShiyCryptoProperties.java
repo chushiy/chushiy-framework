@@ -54,6 +54,36 @@ public class ChuShiyCryptoProperties {
      */
     private PrivateKey privateKey;
 
+    /**
+     * DES
+     */
+    private DES des;
+
+    public DES getDes() {
+        // 默认值
+        if (des == null) {
+            return new DES();
+        }
+        return des;
+    }
+
+    @Getter
+    @Setter
+    public static class DES {
+
+        /**
+         * key
+         */
+        private String key;
+
+        public String getKey() {
+            if (key == null) {
+                return CryptoConstant.DES_KEY;
+            }
+            return key;
+        }
+    }
+
     @PostConstruct
     public void init() {
         // 初始化公钥和私钥

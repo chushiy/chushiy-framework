@@ -27,4 +27,9 @@ public class CryptoConstant {
      * 超时时间
      */
     public static final Long TIMEOUT = 10L * 1000;
+
+    /**
+     * AES加密密钥
+     */
+    public static final String DES_KEY = "chushiy1";
 }

@@ -30,7 +30,7 @@ public class TestCrypto {
     @Test
     void testAES() {
         Crypto crypto = cryptoUtils.getCrypto(CryptoType.AES);
-        String ciphertext = crypto.encrypt("蛋黄味哦吼");
+        String ciphertext = crypto.encrypt("初时y");
         System.out.println(ciphertext);
 
         String plaintext = crypto.decrypt(ciphertext);
@@ -40,7 +40,7 @@ public class TestCrypto {
     @Test
     void testDES() {
         Crypto crypto = cryptoUtils.getCrypto(CryptoType.DES);
-        String ciphertext = crypto.encrypt("蛋黄味哦吼");
+        String ciphertext = crypto.encrypt("初时y");
         System.out.println(ciphertext);
 
         String plaintext = crypto.decrypt(ciphertext);
@@ -50,11 +50,11 @@ public class TestCrypto {
     @Test
     void testMD5() {
         Crypto crypto = cryptoUtils.getCrypto(CryptoType.MD5);
-        String ciphertext = crypto.encrypt("蛋黄味哦吼");
+        String ciphertext = crypto.encrypt("初时y");
         System.out.println(ciphertext);
 
-        String plaintext = crypto.decrypt(ciphertext);
-        System.out.println(plaintext);
+        // String plaintext = crypto.decrypt(ciphertext);
+        // System.out.println(plaintext);
     }
 
     @Test
@@ -69,7 +69,7 @@ public class TestCrypto {
         // System.out.println(RSA.exportPublicKey(keyPair.getPublic()));
         // System.out.println(RSA.exportPrivateKey(keyPair.getPrivate()));
 
-        String ciphertext = crypto.encrypt("蛋黄味哦吼");
+        String ciphertext = crypto.encrypt("初时y");
         System.out.println(ciphertext);
 
         String plaintext = crypto.decrypt(ciphertext);
