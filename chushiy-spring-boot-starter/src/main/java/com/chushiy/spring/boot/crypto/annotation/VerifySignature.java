@@ -12,11 +12,11 @@ import java.lang.annotation.Target;
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/11/10 11:20
- * @Description 解密请求体参数
+ * @DateTime 2024/11/10 16:30
+ * @Description 校验签名
  * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.crypto.annotation
- * @ClassName DecryptRequestBody.java
+ * @ClassName VerifySignature.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
@@ -24,7 +24,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 @Crypto
-public @interface DecryptRequestBody {
+public @interface VerifySignature {
 
     /**
      * 加解密类型 默认AES

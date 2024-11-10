@@ -59,7 +59,7 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         CryptoType type = encryptResponseBody.type();
         String encryptStr = null;
         try {
-            encryptStr = CryptoUtils.getCrypto(type).encrypt(bodyStr);
+            // encryptStr = CryptoUtils.getCrypto(type).encrypt(bodyStr);
         } catch (Exception e) {
             encryptStr = "";
         }

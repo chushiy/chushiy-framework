@@ -1,21 +1,11 @@
 package com.chushiy.crypto.util;
 
-import com.chushiy.crypto.AES;
 import com.chushiy.crypto.Crypto;
-import com.chushiy.crypto.DES;
-import com.chushiy.crypto.MD5;
-import com.chushiy.crypto.RSA;
 import com.chushiy.crypto.enums.CryptoType;
-import com.chushiy.standard.util.Assert;
-import org.bouncycastle.jce.provider.BouncyCastleProvider;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Component;
 
-import javax.crypto.Cipher;
-import javax.crypto.spec.IvParameterSpec;
-import javax.crypto.spec.SecretKeySpec;
-import java.security.Security;
-import java.util.Base64;
-import java.util.EnumMap;
-import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -29,23 +19,23 @@ import java.util.Map;
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
+@Component
+@RequiredArgsConstructor
+@Slf4j
 public class CryptoUtils {
 
     /**
      * 所有加解密算法
      */
-    private static Map<CryptoType, Crypto> cryptoMap = new EnumMap<>(CryptoType.class);
+    private final Map<CryptoType, Crypto> cryptoMap;
 
-    static {
-        // 注册
-        Security.addProvider(new BouncyCastleProvider());
-        cryptoMap.put(CryptoType.AES, new AES());
-        cryptoMap.put(CryptoType.DES, new DES());
-        cryptoMap.put(CryptoType.RSA, new RSA());
-        cryptoMap.put(CryptoType.MD5, new MD5());
-    }
-
-    public static Crypto getCrypto(CryptoType type) {
+    /**
+     * 获取加解密算法
+     *
+     * @param type 加解密类型
+     * @return Crypto
+     */
+    public Crypto getCrypto(CryptoType type) {
         return cryptoMap.get(type);
     }
 }

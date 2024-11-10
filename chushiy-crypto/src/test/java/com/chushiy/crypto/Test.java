@@ -17,11 +17,11 @@ import com.chushiy.crypto.util.CryptoUtils;
 public class Test {
 
     public static void main(String[] args) {
-        Crypto crypto = CryptoUtils.getCrypto(CryptoType.AES);
-        String ciphertext = crypto.encrypt("蛋黄味哦吼");
-        System.out.println(ciphertext);
-
-        String plaintext = crypto.decrypt(ciphertext);
-        System.out.println(plaintext);
+        // Crypto crypto = CryptoUtils.getCrypto(CryptoType.AES);
+        // String ciphertext = crypto.encrypt("蛋黄味哦吼");
+        // System.out.println(ciphertext);
+        //
+        // String plaintext = crypto.decrypt(ciphertext);
+        // System.out.println(plaintext);
     }
 }

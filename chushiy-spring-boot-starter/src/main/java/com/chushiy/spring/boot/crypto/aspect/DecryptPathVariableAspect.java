@@ -3,6 +3,7 @@ package com.chushiy.spring.boot.crypto.aspect;
 import com.chushiy.crypto.util.CryptoUtils;
 import com.chushiy.spring.boot.crypto.annotation.DecryptPathVariable;
 import com.chushiy.spring.boot.crypto.annotation.DecryptRequestParam;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -27,9 +28,12 @@ import java.lang.reflect.Parameter;
 @Aspect
 @Component
 @Slf4j
+@RequiredArgsConstructor
 public class DecryptPathVariableAspect {
 
-    @Around("@annotation(DecryptPathVariable)")
+    private final CryptoUtils cryptoUtils;
+
+    @Around("@annotation(com.chushiy.spring.boot.crypto.annotation.DecryptPathVariable)")
     public Object decrypt(ProceedingJoinPoint joinPoint) throws Throwable {
         MethodSignature signature = (MethodSignature) joinPoint.getSignature();
         Method method = signature.getMethod();
@@ -44,7 +48,7 @@ public class DecryptPathVariableAspect {
                     DecryptPathVariable decryptPathVariable = parameter.getAnnotation(DecryptPathVariable.class);
                     try {
                         // 根据指定的类型解密
-                        args[i] = CryptoUtils.getCrypto(decryptPathVariable.type()).decrypt(encryptedValue);
+                        args[i] = cryptoUtils.getCrypto(decryptPathVariable.type()).decrypt(encryptedValue);
                         log.info("PathVariable解密.参数:{},密文:{},明文:{}", parameter.getName(), encryptedValue, args[i]);
                     } catch (Exception e) {
                         log.error("参数解密失败，参数名：" + parameter.getName());

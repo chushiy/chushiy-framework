@@ -51,7 +51,7 @@ public class DecryptRequestBodyAdvice extends RequestBodyAdviceAdapter {
         // 解密
         String decryptBodyStr = null;
         try {
-            decryptBodyStr = CryptoUtils.getCrypto(cryptoType).decrypt(encryptBodyStr);
+            // decryptBodyStr = CryptoUtils.getCrypto(cryptoType).decrypt(encryptBodyStr);
         } catch (Exception e) {
             decryptBodyStr = "";
         }

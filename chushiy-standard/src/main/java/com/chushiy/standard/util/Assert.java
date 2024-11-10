@@ -153,6 +153,7 @@ public class Assert extends cn.hutool.core.lang.Assert {
         isTrue(!expression, exception);
     }
 
+
     /**
      * 不为空白字符串 ""也不行
      *
@@ -247,6 +248,12 @@ public class Assert extends cn.hutool.core.lang.Assert {
     public static void isBlank(String text, Exception exception) throws Exception {
         if (StringUtils.isNotBlank(text)) {
             throw exception;
+        }
+    }
+
+    public static <X extends Throwable> void isBlank(String text, Supplier<? extends X> supplier) throws X {
+        if (StringUtils.isNotBlank(text)) {
+            throw supplier.get();
         }
     }
 

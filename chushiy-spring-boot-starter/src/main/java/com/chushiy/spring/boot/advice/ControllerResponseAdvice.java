@@ -1,11 +1,11 @@
 package com.chushiy.spring.boot.advice;
 
 import com.chushiy.spring.boot.annotation.ControllerResponse;
+import com.chushiy.standard.pojo.R;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
@@ -41,8 +41,12 @@ public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
 
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
+        // 避免重复包裹
+        if (body instanceof Result) {
+            return body;
+        }
+        log.info("Controller返回对象包装开始");
         if (returnType.getGenericParameterType().equals(String.class)) {
-            log.info("Controller返回对象包装开始");
             ObjectMapper objectMapper = new ObjectMapper();
             try {
                 return objectMapper.writeValueAsString(Result.success(body));

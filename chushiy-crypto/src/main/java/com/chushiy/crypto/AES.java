@@ -1,13 +1,17 @@
 package com.chushiy.crypto;
 
 import com.chushiy.crypto.exception.CryptoException;
+import com.chushiy.crypto.properties.ChuShiyCryptoProperties;
 import com.chushiy.standard.util.Assert;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 /**
@@ -21,16 +25,37 @@ import java.util.Base64;
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
-@Setter
 @Slf4j
+@Component
+@Setter
 public class AES implements Crypto {
 
-    public String key;
+    /**
+     * key
+     */
+    private String key;
 
-    public String iv;
+    /**
+     * iv
+     */
+    private String iv;
 
-    public AES() {
-        this("chushiy11080aqgeszaqtwkpi.hrfcdw", "chushiy11080ehwu");
+    /**
+     * 算法
+     */
+    private static final String ALGORITHM = "AES";
+    /**
+     * 加密变换
+     */
+    private static final String TRANSFORMATION = "AES/CBC/PKCS5Padding";
+    /**
+     * 字符集
+     */
+    private static final String CHARSET_NAME = StandardCharsets.UTF_8.name();
+
+    @Autowired
+    public AES(ChuShiyCryptoProperties chuShiyCryptoProperties) {
+        this(chuShiyCryptoProperties.getAes().getKey(), chuShiyCryptoProperties.getAes().getIv());
     }
 
     public AES(String key, String iv) {
@@ -43,11 +68,11 @@ public class AES implements Crypto {
     @Override
     public String encrypt(String plaintext) throws CryptoException {
         try {
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
-            SecretKeySpec keySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
-            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes("UTF-8"));
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION, "BC");
+            SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(CHARSET_NAME), ALGORITHM);
+            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(CHARSET_NAME));
             cipher.init(Cipher.ENCRYPT_MODE, keySpec, ivSpec);
-            byte[] encrypted = cipher.doFinal(plaintext.getBytes("UTF-8"));
+            byte[] encrypted = cipher.doFinal(plaintext.getBytes(CHARSET_NAME));
             return Base64.getEncoder().encodeToString(encrypted);
         } catch (Exception e) {
             log.error("加密失败", e);
@@ -58,12 +83,12 @@ public class AES implements Crypto {
     @Override
     public String decrypt(String ciphertext) throws CryptoException {
         try {
-            Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
-            SecretKeySpec keySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
-            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes("UTF-8"));
+            Cipher cipher = Cipher.getInstance(TRANSFORMATION, "BC");
+            SecretKeySpec keySpec = new SecretKeySpec(key.getBytes(CHARSET_NAME), ALGORITHM);
+            IvParameterSpec ivSpec = new IvParameterSpec(iv.getBytes(CHARSET_NAME));
             cipher.init(Cipher.DECRYPT_MODE, keySpec, ivSpec);
             byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(ciphertext));
-            return new String(decrypted, "UTF-8");
+            return new String(decrypted, CHARSET_NAME);
         } catch (Exception e) {
             log.error("解密失败", e);
             throw new CryptoException("解密失败", e);

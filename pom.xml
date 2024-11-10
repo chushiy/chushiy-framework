@@ -53,6 +53,7 @@
         <module>chushiy-wechat</module>
         <module>chushiy-crypto</module>
         <module>chushiy-common</module>
+        <module>chushiy-spring-boot-starter-test</module>
     </modules>
 
     <properties>

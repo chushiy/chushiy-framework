@@ -1,5 +1,6 @@
 package com.chushiy.spring.boot.autoconfigure;
 
+import com.chushiy.crypto.properties.ChuShiyCryptoProperties;
 import com.chushiy.spring.boot.autoconfigure.properties.ChuShiyProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +16,10 @@ import org.springframework.context.annotation.Configuration;
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
-@EnableConfigurationProperties(ChuShiyProperties.class)
+@EnableConfigurationProperties({
+        ChuShiyProperties.class,
+        ChuShiyCryptoProperties.class
+})
 @Configuration
 public class ChuShiyAutoConfigure {
 }
