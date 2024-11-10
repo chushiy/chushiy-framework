@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.advice;
+package com.chushiy.spring.boot.advice;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,7 +8,7 @@ import lombok.extern.slf4j.Slf4j;
  * @DateTime 2024/3/24 下午 12:14
  * @Description 全局异常处理器
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.advice
+ * @PackageName com.chushiy.spring.boot.advice
  * @ClassName GlobalExceptionHandler.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

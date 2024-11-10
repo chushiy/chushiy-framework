@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.redis;
+package com.chushiy.spring.boot.redis;
 
 import com.alibaba.fastjson.support.spring.FastJsonRedisSerializer;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +13,7 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * @DateTime 2024/3/24 下午 2:47
  * @Description redis配置
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.redis
+ * @PackageName com.chushiy.spring.boot.redis
  * @ClassName RedisConfig.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

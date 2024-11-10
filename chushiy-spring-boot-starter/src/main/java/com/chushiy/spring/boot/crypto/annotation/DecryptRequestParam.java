@@ -1,4 +1,6 @@
-package com.chushiy.spring.boot.autoconfigure.annotation;
+package com.chushiy.spring.boot.crypto.annotation;
+
+import com.chushiy.crypto.enums.CryptoType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
@@ -9,21 +11,22 @@ import java.lang.annotation.Target;
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/11/5 14:19
- * @Description controller是否包装响应
+ * @DateTime 2024/11/10 12:07
+ * @Description 解密请求参数
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.annotation
- * @ClassName ControllerResponse.java
+ * @PackageName com.chushiy.spring.boot.crypto.annotation
+ * @ClassName DecryptRequestParam.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
 @Documented
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ControllerResponse {
+public @interface DecryptRequestParam {
 
     /**
-     * 是否开启
+     * 加解密类型 默认AES
+     * @return CryptoType
      */
-    boolean enable() default false;
+    CryptoType type() default CryptoType.AES;
 }

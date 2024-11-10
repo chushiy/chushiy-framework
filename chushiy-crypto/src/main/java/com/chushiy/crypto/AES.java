@@ -1,7 +1,9 @@
 package com.chushiy.crypto;
 
+import com.chushiy.crypto.exception.CryptoException;
 import com.chushiy.standard.util.Assert;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.IvParameterSpec;
@@ -20,6 +22,7 @@ import java.util.Base64;
  * @Version 1.0.0
  */
 @Setter
+@Slf4j
 public class AES implements Crypto {
 
     public String key;
@@ -38,7 +41,7 @@ public class AES implements Crypto {
     }
 
     @Override
-    public String encrypt(String plaintext) {
+    public String encrypt(String plaintext) throws CryptoException {
         try {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
             SecretKeySpec keySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
@@ -47,12 +50,13 @@ public class AES implements Crypto {
             byte[] encrypted = cipher.doFinal(plaintext.getBytes("UTF-8"));
             return Base64.getEncoder().encodeToString(encrypted);
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            log.error("加密失败", e);
+            throw new CryptoException("加密失败", e);
         }
     }
 
     @Override
-    public String decrypt(String ciphertext) {
+    public String decrypt(String ciphertext) throws CryptoException {
         try {
             Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding", "BC");
             SecretKeySpec keySpec = new SecretKeySpec(key.getBytes("UTF-8"), "AES");
@@ -61,7 +65,8 @@ public class AES implements Crypto {
             byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(ciphertext));
             return new String(decrypted, "UTF-8");
         } catch (Exception e) {
-            throw new RuntimeException("解密失败", e);
+            log.error("解密失败", e);
+            throw new CryptoException("解密失败", e);
         }
     }
 }

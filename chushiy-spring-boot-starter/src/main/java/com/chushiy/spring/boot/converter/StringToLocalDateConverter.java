@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.converter;
+package com.chushiy.spring.boot.converter;
 
 import com.chushiy.spring.boot.autoconfigure.properties.ChuShiyProperties;
 import com.chushiy.standard.util.DateUtils;
@@ -14,7 +14,7 @@ import java.time.LocalDate;
  * @DateTime 2024/4/8 下午 8:54
  * @Description string转LocalDate转换器
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.converter
+ * @PackageName com.chushiy.spring.boot.converter
  * @ClassName StringToLocalDateConverter.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

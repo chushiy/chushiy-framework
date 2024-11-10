@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.interceptor;
+package com.chushiy.spring.boot.interceptor;
 
 import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
@@ -15,7 +15,7 @@ import java.util.Objects;
  * @DateTime 2023/12/4 下午 9:06
  * @Description 日志记录拦截器
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.interceptor
+ * @PackageName com.chushiy.spring.boot.interceptor
  * @ClassName LogInterceptor.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

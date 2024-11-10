@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.filter;
+package com.chushiy.spring.boot.filter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.filter.OrderedFilter;
@@ -16,13 +16,14 @@ import java.io.IOException;
  * @DateTime 2024/3/24 下午 4:59
  * @Description 日志
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.filter
+ * @PackageName com.chushiy.spring.boot.filter
  * @ClassName LogFilter.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
 @Slf4j
 public class LogFilter implements OrderedFilter {
+
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         // 打印请求信息

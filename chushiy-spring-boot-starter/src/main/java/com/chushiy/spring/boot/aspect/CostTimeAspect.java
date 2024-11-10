@@ -1,6 +1,6 @@
-package com.chushiy.spring.boot.autoconfigure.aspect;
+package com.chushiy.spring.boot.aspect;
 
-import com.chushiy.spring.boot.autoconfigure.enums.InterfaceTimeLevelEnum;
+import com.chushiy.spring.boot.enums.InterfaceTimeLevelEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
  * @DateTime 2023/11/27 下午 8:07
  * @Description 实现代码耗时注解切面实现
  * @ProjectName gulimall
- * @PackageName com.chushiy.spring.boot.autoconfigure.aspect
+ * @PackageName com.chushiy.spring.boot.aspect
  * @ClassName CostTimeAspect.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
@@ -23,7 +23,7 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class CostTimeAspect {
 
-    @Pointcut(value = "@annotation(com.chushiy.spring.boot.autoconfigure.annotation.CostTime)")
+    @Pointcut(value = "@annotation(com.chushiy.spring.boot.annotation.CostTime)")
     public void costTime() {
     }
 

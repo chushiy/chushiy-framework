@@ -1,6 +1,6 @@
 package com.chushiy.spring.boot.autoconfigure.properties;
 
-import com.chushiy.spring.boot.autoconfigure.enums.JSONTypeEnum;
+import com.chushiy.spring.boot.enums.JSONTypeEnum;
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.web.cors.CorsConfiguration;

@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.enums;
+package com.chushiy.spring.boot.enums;
 
 import lombok.RequiredArgsConstructor;
 
@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
  * @DateTime 2024/3/24 下午 3:10
  * @Description json类型
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.enums
+ * @PackageName com.chushiy.spring.boot.enums
  * @ClassName JSONTypeEnum.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

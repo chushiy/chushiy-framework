@@ -1,6 +1,6 @@
 package com.chushiy.spring.boot.autoconfigure.config;
 
-import com.chushiy.spring.boot.autoconfigure.converter.StringToLocalDateConverter;
+import com.chushiy.spring.boot.converter.StringToLocalDateConverter;
 import com.chushiy.spring.boot.autoconfigure.properties.ChuShiyProperties;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.FormatterRegistry;

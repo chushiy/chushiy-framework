@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.filter;
+package com.chushiy.spring.boot.filter;
 
 import com.chushiy.standard.ThreadContext;
 import com.chushiy.standard.enums.PlatformEnum;
@@ -26,13 +26,14 @@ import java.io.IOException;
  * @DateTime 2024/3/24 下午 5:18
  * @Description 客户端信息
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.filter
+ * @PackageName com.chushiy.spring.boot.filter
  * @ClassName ClientInformationFilter.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
  */
 @Slf4j
 public class ClientInformationFilter implements OrderedFilter {
+
     @Override
     public void doFilter(ServletRequest req, ServletResponse response, FilterChain chain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) req;

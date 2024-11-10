@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.enums;
+package com.chushiy.spring.boot.enums;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -9,7 +9,7 @@ import lombok.ToString;
  * @DateTime 2023/11/27 下午 8:28
  * @Description 接口耗时等级枚举
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.enums
+ * @PackageName com.chushiy.spring.boot.enums
  * @ClassName InterfaceTimeLevelConstant.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

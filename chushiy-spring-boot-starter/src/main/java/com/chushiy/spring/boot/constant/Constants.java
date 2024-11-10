@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.autoconfigure.constant;
+package com.chushiy.spring.boot.constant;
 
 /**
  * @Author 初时y
@@ -6,7 +6,7 @@ package com.chushiy.spring.boot.autoconfigure.constant;
  * @DateTime 2024/4/8 下午 9:31
  * @Description 常量
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.autoconfigure.constant
+ * @PackageName com.chushiy.spring.boot.constant
  * @ClassName Constants.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
