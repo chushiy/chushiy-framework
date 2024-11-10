@@ -1,9 +1,10 @@
-package com.chushiy.spring.boot.crypto.annotation;
+package com.chushiy.crypto.annotation;
 
 import com.chushiy.crypto.enums.CryptoType;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
+import java.lang.annotation.Inherited;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
@@ -11,19 +12,19 @@ import java.lang.annotation.Target;
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/11/10 11:20
- * @Description 解密请求体参数
+ * @DateTime 2024/11/10 12:21
+ * @Description 加解密顶级注解
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.crypto.annotation
- * @ClassName DecryptRequestBody.java
+ * @PackageName com.chushiy.crypto.annotation
+ * @ClassName Crypto.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
 @Documented
-@Target({ElementType.METHOD})
+@Target({ElementType.METHOD,ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-@Crypto
-public @interface DecryptRequestBody {
+@Inherited
+public @interface Crypto {
 
     /**
      * 加解密类型 默认AES

@@ -1,5 +1,6 @@
 package com.chushiy.spring.boot.crypto.annotation;
 
+import com.chushiy.crypto.annotation.Crypto;
 import com.chushiy.crypto.enums.CryptoType;
 
 import java.lang.annotation.Documented;
@@ -22,6 +23,7 @@ import java.lang.annotation.Target;
 @Documented
 @Target({ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
+@Crypto
 public @interface EncryptResponseBody {
 
     /**
