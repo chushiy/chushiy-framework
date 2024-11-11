@@ -75,7 +75,7 @@ public class AES implements Crypto {
             byte[] encrypted = cipher.doFinal(plaintext.getBytes(CHARSET_NAME));
             return Base64.getEncoder().encodeToString(encrypted);
         } catch (Exception e) {
-            log.error("加密失败", e);
+            log.error("AES加密失败", e);
             throw new CryptoException("加密失败", e);
         }
     }
@@ -90,7 +90,7 @@ public class AES implements Crypto {
             byte[] decrypted = cipher.doFinal(Base64.getDecoder().decode(ciphertext));
             return new String(decrypted, CHARSET_NAME);
         } catch (Exception e) {
-            log.error("解密失败", e);
+            log.error("AES解密失败", e);
             throw new CryptoException("解密失败", e);
         }
     }

@@ -79,6 +79,7 @@ public class RSA implements Crypto {
             byte[] encryptedData = cipher.doFinal(plaintext.getBytes(CHARSET_NAME));
             return Base64.getEncoder().encodeToString(encryptedData);
         } catch (Exception e) {
+            log.error("RSA加密错误", e);
             throw new CryptoException("Encryption failed", e);
         }
     }
@@ -92,6 +93,7 @@ public class RSA implements Crypto {
             byte[] decryptedData = cipher.doFinal(decodedData);
             return new String(decryptedData, CHARSET_NAME);
         } catch (Exception e) {
+            log.error("RSA解密错误", e);
             throw new CryptoException("Decryption failed", e);
         }
     }

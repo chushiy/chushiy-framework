@@ -44,13 +44,31 @@ public class MD5 implements Crypto {
             }
             return hexString.toString();
         } catch (Exception e) {
+            log.error("MD5加密失败", e);
             throw new CryptoException("Encryption failed", e);
         }
     }
 
     @Override
+    @Deprecated
     public String decrypt(String ciphertext) throws CryptoException {
         // MD5例外 不能解密
         return "";
+    }
+
+    /**
+     * 校验明文和密文是否一致
+     * @param plaintext 明文
+     * @param ciphertext 密文
+     * @return boolean
+     * @throws CryptoException
+     */
+    public boolean equals(String plaintext, String ciphertext) throws CryptoException {
+        try {
+            return encrypt(plaintext).equals(ciphertext);
+        } catch (CryptoException e) {
+            log.error("MD5 equals失败", e);
+            return false;
+        }
     }
 }

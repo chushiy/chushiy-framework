@@ -27,6 +27,10 @@ public enum CryptoType {
     /**
      * MD5
      */
-    MD5
+    MD5,
+    /**
+     * BASE64
+     */
+    BASE64
     ;
 }
