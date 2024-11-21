@@ -1,11 +1,13 @@
 package com.chushiy.spring.boot.crypto.advice;
 
+import com.chushiy.crypto.CryptoFactory;
 import com.chushiy.crypto.enums.CryptoType;
 import com.chushiy.crypto.util.CryptoUtils;
 import com.chushiy.spring.boot.crypto.annotation.EncryptResponseBody;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.core.MethodParameter;
@@ -33,7 +35,12 @@ import java.util.Objects;
 @Slf4j
 @RestControllerAdvice
 @Order(2)
+@RequiredArgsConstructor
 public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
+
+    private final ObjectMapper objectMapper;
+
+    private final CryptoFactory cryptoFactory;
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -44,10 +51,9 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         log.info("响应加密开始");
-        ObjectMapper objectMapper = new ObjectMapper();
         String bodyStr = null;
         try {
-            bodyStr = objectMapper.writeValueAsString(body);
+            bodyStr = this.objectMapper.writeValueAsString(body);
         } catch (JsonProcessingException e) {
             try {
                 bodyStr = objectMapper.writeValueAsString(Result.fail());
@@ -59,7 +65,7 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         CryptoType type = encryptResponseBody.type();
         String encryptStr = null;
         try {
-            // encryptStr = CryptoUtils.getCrypto(type).encrypt(bodyStr);
+            encryptStr = this.cryptoFactory.get(type).encrypt(bodyStr);
         } catch (Exception e) {
             encryptStr = "";
         }

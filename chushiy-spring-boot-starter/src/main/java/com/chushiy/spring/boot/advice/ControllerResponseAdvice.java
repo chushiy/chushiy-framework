@@ -5,6 +5,7 @@ import com.chushiy.standard.pojo.R;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
 import org.springframework.core.annotation.Order;
@@ -30,7 +31,10 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 @Slf4j
 @RestControllerAdvice
 @Order(-1)
+@RequiredArgsConstructor
 public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
+
+    private final ObjectMapper objectMapper;
 
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
@@ -47,9 +51,8 @@ public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
         }
         log.info("Controller返回对象包装开始");
         if (returnType.getGenericParameterType().equals(String.class)) {
-            ObjectMapper objectMapper = new ObjectMapper();
             try {
-                return objectMapper.writeValueAsString(Result.success(body));
+                return this.objectMapper.writeValueAsString(Result.success(body));
             } catch (JsonProcessingException ex) {
                 return Result.fail();
             }

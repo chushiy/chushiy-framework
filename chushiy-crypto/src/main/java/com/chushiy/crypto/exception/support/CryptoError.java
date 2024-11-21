@@ -25,7 +25,11 @@ public enum CryptoError implements ErrorSupport {
     /**
      * 超时
      */
-    TIMESTAMP_TIMEOUT(false, CryptoModule.CRYPTO, "101", "超时")
+    TIMESTAMP_TIMEOUT(false, CryptoModule.CRYPTO, "101", "超时"),
+    /**
+     * 校验CHUSHIY失败
+     */
+    VERIFY_CHUSHIY_FAIL(false, CryptoModule.CRYPTO, "102", "校验chushiy失败"),
     ;
 
     private final boolean isSystemError;

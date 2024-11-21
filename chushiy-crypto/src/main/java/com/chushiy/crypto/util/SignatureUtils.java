@@ -1,6 +1,7 @@
 package com.chushiy.crypto.util;
 
 import com.chushiy.crypto.Crypto;
+import com.chushiy.crypto.CryptoFactory;
 import com.chushiy.crypto.enums.CryptoType;
 import com.chushiy.crypto.exception.support.CryptoError;
 import com.chushiy.standard.exception.BusinessException;
@@ -25,7 +26,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class SignatureUtils {
 
-    private final CryptoUtils cryptoUtils;
+    private final CryptoFactory cryptoFactory;
 
     /**
      * 签名格式部分长度
@@ -45,7 +46,7 @@ public class SignatureUtils {
      * timestamp md5加密
      * requestId base64加密
      * nonce md5加密
-     * sign requestId+nonce+timestamp RSA加密 格式如下 1:2:3
+     * sign requestId+nonce+timestamp RSA加密 格式如下 requestId:nonce:timestamp
      *
      * @param timestamp 时间戳
      * @param requestId 请求id
@@ -54,7 +55,7 @@ public class SignatureUtils {
      * @return boolean
      */
     public boolean verifySignature(String timestamp, String requestId, String nonce, String sign) {
-        Crypto rsa = cryptoUtils.getCrypto(CryptoType.RSA);
+        Crypto rsa = cryptoFactory.get(CryptoType.RSA);
 
         try {
             // 解密sign

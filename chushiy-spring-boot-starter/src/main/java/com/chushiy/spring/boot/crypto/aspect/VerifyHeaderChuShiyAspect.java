@@ -3,7 +3,7 @@ package com.chushiy.spring.boot.crypto.aspect;
 import cn.hutool.core.util.NumberUtil;
 import com.chushiy.crypto.exception.support.CryptoError;
 import com.chushiy.crypto.properties.ChuShiyCryptoProperties;
-import com.chushiy.crypto.util.SignatureUtils;
+import com.chushiy.crypto.util.VerifyHeaderChuShiyUtils;
 import com.chushiy.standard.exception.BusinessException;
 import com.chushiy.standard.util.Assert;
 import lombok.RequiredArgsConstructor;
@@ -21,11 +21,11 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * @Author 初时y
  * @Email 2283873481@qq.com
- * @DateTime 2024/11/10 16:31
- * @Description 校验签名切面
+ * @DateTime 2024/11/11 20:31
+ * @Description VerifyHeaderChuShiy切面
  * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.crypto.aspect
- * @ClassName VerifySignatureAspect.java
+ * @ClassName VerifyHeaderChuShiyAspect.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
@@ -33,60 +33,61 @@ import javax.servlet.http.HttpServletRequest;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class VerifySignatureAspect {
+public class VerifyHeaderChuShiyAspect {
 
-    private final SignatureUtils signatureUtils;
 
     private final ChuShiyCryptoProperties cryptoProperties;
 
-    private static final String TIMESTAMP_KEY = "timestamp";
-    private static final String REQUEST_ID_KEY = "request-id";
-    private static final String NONCE_KEY = "nonce";
-    private static final String SIGN_KEY = "sign";
+    private final VerifyHeaderChuShiyUtils verifyHeaderChuShiyUtils;
 
-    @Pointcut("@annotation(com.chushiy.spring.boot.crypto.annotation.VerifySignature)")
-    public void verifySignPointcut() {
+    private static final String TIMESTAMP_KEY = "timestamp";
+    private static final String CSY_KEY = "csy";
+    private static final String B_KEY = "b";
+    private static final String QY_KEY = "qy";
+
+    @Pointcut("@annotation(com.chushiy.spring.boot.crypto.annotation.VerifyHeaderChuShiy)")
+    public void verifyHeaderChuShiyPointcut() {
     }
 
-    @Around("verifySignPointcut()")
-    public Object verifySign(ProceedingJoinPoint joinPoint) throws Throwable {
+    @Around("verifyHeaderChuShiyPointcut()")
+    public Object verifyHeaderChuShiy(ProceedingJoinPoint joinPoint) throws Throwable {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
 
         // timestamp
         String timestamp = request.getHeader(TIMESTAMP_KEY);
         Assert.isBlank(timestamp, () -> {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         });
         // 判断timestamp是否可以转为Long
         Assert.isFalse(NumberUtil.isLong(timestamp), () -> {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         });
-        // 超过配置的时间
+        // 超时
         if (Math.abs(System.currentTimeMillis() - Long.parseLong(timestamp)) > cryptoProperties.getTimeOut()) {
             throw new BusinessException(CryptoError.TIMESTAMP_TIMEOUT);
         }
 
-        // requestId
-        String requestId = request.getHeader(REQUEST_ID_KEY);
-        Assert.isBlank(requestId, () -> {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+        // csy
+        String csy = request.getHeader(CSY_KEY);
+        Assert.isBlank(csy, () -> {
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         });
 
-        // nonce
-        String nonce = request.getHeader(NONCE_KEY);
-        Assert.isBlank(nonce, () -> {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+        // b
+        String b = request.getHeader(B_KEY);
+        Assert.isBlank(b, () -> {
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         });
 
-        // sign
-        String sign = request.getHeader(SIGN_KEY);
-        Assert.isBlank(sign, () -> {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+        // qy
+        String qy = request.getHeader(QY_KEY);
+        Assert.isBlank(qy, () -> {
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         });
 
-        // 验签
-        if (!this.signatureUtils.verifySignature(timestamp, requestId, nonce, sign)) {
-            throw new BusinessException(CryptoError.VERIFY_SIGNATURE_FAIL);
+        // 验证
+        if (!this.verifyHeaderChuShiyUtils.verifyHeaderChuShiy(timestamp, csy, b, qy)) {
+            throw new BusinessException(CryptoError.VERIFY_CHUSHIY_FAIL);
         }
 
         return joinPoint.proceed();
