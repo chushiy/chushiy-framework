@@ -20,6 +20,12 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JacksonConfig {
 
+    /**
+     * 配置ObjectMapper
+     * 为什么不使用@Bean
+     * 不能覆盖容器中有的配置 在已有的配置上面在进行配置
+     * @param objectMapper objectMapper
+     */
     @Autowired
     public void configureObjectMapper(ObjectMapper objectMapper) {
         // 添加JavaTimeModule以支持Java 8的日期/时间类型
