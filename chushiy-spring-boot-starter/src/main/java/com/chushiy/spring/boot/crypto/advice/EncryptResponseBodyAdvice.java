@@ -57,8 +57,9 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         } catch (JsonProcessingException e) {
             try {
                 bodyStr = objectMapper.writeValueAsString(Result.fail());
-            } catch (JsonProcessingException ex) {
                 log.error("响应加密报错", e);
+            } catch (JsonProcessingException ex) {
+                log.error("响应加密报错", ex);
             }
         }
         EncryptResponseBody encryptResponseBody = Objects.requireNonNull(returnType.getMethod()).getAnnotation(EncryptResponseBody.class);
