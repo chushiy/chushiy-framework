@@ -61,20 +61,21 @@ public class ApiLogAspect {
             // 请求方法签名
             Signature signature = joinPoint.getSignature();
             // 接口返回结果
-            Object result = JSON.toJSONString(joinPoint.proceed());
+            Object result = joinPoint.proceed();
+            Object resultString = JSON.toJSONString(result);
             // 耗时
             long elapsedTime = System.currentTimeMillis() - start;
 
-            log.info("\n\r======================================================================\n\r" +
-                            "请求ip:{} \n\r" +
-                            "请求地址:{} \n\r" +
-                            "请求方式:{} \n\r" +
-                            "请求类方法:{} \n\r" +
-                            "请求方法参数:{} \n\r" +
-                            "返回结果:{} \n\r" +
-                            "处理耗时:{}ms \n\r" +
-                            "\n\r======================================================================\n\r",
-                    ip, uri, method, signature, params, result, elapsedTime
+            log.info("\n\n\r======================================================================\n\r" +
+                            "请求ip=> {} \n\r" +
+                            "请求地址=> {} \n\r" +
+                            "请求方式=> {} \n\r" +
+                            "请求类方法=> {} \n\r" +
+                            "请求方法参数=> {} \n\r" +
+                            "返回结果=> {} \n\r" +
+                            "处理耗时=> {}ms \n\r" +
+                            "======================================================================\n\r",
+                    ip, uri, method, signature, params, resultString, elapsedTime
             );
 
             return result;
