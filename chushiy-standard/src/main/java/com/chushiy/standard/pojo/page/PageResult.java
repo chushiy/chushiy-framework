@@ -19,6 +19,16 @@ public class PageResult<T> extends Page<T> {
 
     private IPage<T> page;
 
+    /**
+     * 空
+     *
+     * @param <T> 类型
+     * @return PageResult<T>
+     */
+    public static <T> PageResult<T> empty() {
+        return new PageResult<>();
+    }
+
     private PageResult() {
     }
 
