@@ -1,10 +1,9 @@
 package com.chushiy.json;
 
 import com.alibaba.fastjson.JSONObject;
-import com.chushiy.standard.json.JSON;
-import com.chushiy.standard.json.JSONParseException;
-import com.chushiy.standard.json.exception.JSONSerializationException;
-import com.chushiy.standard.pojo.POJO;
+import com.chushiy.jsonapi.JSON;
+import com.chushiy.jsonapi.exception.JSONParseException;
+import com.chushiy.jsonapi.exception.JSONSerializationException;
 
 import java.io.Serializable;
 
@@ -27,8 +26,8 @@ public class FastJSON implements JSON {
     }
 
     @Override
-    public String toJSONString(POJO pojo) throws JSONSerializationException {
-        return this.toJSONString((Serializable) pojo);
+    public String toJSONString(Object obj) throws JSONSerializationException {
+        return this.toJSONString((Serializable) obj);
     }
 
     @Override

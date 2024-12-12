@@ -54,6 +54,7 @@
         <module>chushiy-crypto</module>
         <module>chushiy-common</module>
         <module>chushiy-spring-boot-starter-test</module>
+        <module>chushiy-json-api</module>
     </modules>
 
     <properties>
@@ -79,7 +80,7 @@
         <minio.version>8.2.2</minio.version>
         <poi.version>4.1.2</poi.version>
         <transmittable-thread-local.version>2.14.4</transmittable-thread-local.version>
-        <lombok.version>1.18.24</lombok.version>
+        <lombok.version>1.18.30</lombok.version>
         <mybatis-plus-join.version>1.4.5</mybatis-plus-join.version>
         <mybatis-plus.version>3.5.3.1</mybatis-plus.version>
         <mybatis.version>2.2.0</mybatis.version>
@@ -114,6 +115,13 @@
                 <version>${chushiy.version}</version>
             </dependency>
 
+            <!-- json相关 -->
+            <dependency>
+                <!--    <groupId>com.chushiy</groupId>-->
+                <groupId>io.github.chushiy</groupId>
+                <artifactId>chushiy-json-api</artifactId>
+                <version>${chushiy.version}</version>
+            </dependency>
             <dependency>
                 <!--    <groupId>com.chushiy</groupId>-->
                 <groupId>io.github.chushiy</groupId>
@@ -294,6 +302,7 @@
                 <artifactId>bcprov-jdk18on</artifactId>
                 <version>${bcprov.version}</version>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 

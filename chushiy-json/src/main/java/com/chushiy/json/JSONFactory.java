@@ -1,6 +1,6 @@
 package com.chushiy.json;
 
-import com.chushiy.standard.json.JSON;
+import com.chushiy.jsonapi.JSON;
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.Iterator;
@@ -54,7 +54,7 @@ public class JSONFactory {
             Iterator<JSON> it = loader.iterator();
             if (it.hasNext()) {
                 json = it.next();
-                log.info("使用系统提供的JSON:{}", json.getClass());
+                log.info("使用系统提供的JSON:{}", json.getClass().toString());
                 return json;
             }
             // 默认提供的JSON实现
@@ -62,7 +62,7 @@ public class JSONFactory {
             try {
                 Class<?> jsonClazz = Class.forName(defaultJSON);
                 json = (JSON) jsonClazz.newInstance();
-                log.info("使用默认提供的JSON:{}", json.getClass());
+                log.info("使用默认提供的JSON:{}", json.getClass().toString());
                 return json;
             } catch (Exception x) {
                 throw new RuntimeException(

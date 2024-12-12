@@ -26,10 +26,19 @@
 
     <dependencies>
 
-        <!-- 导入必要的规范 -->
         <dependency>
             <groupId>io.github.chushiy</groupId>
-            <artifactId>chushiy-standard</artifactId>
+            <artifactId>chushiy-json-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
         <dependency>

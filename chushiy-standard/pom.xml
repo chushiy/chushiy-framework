@@ -28,6 +28,10 @@
             <groupId>io.github.chushiy</groupId>
             <artifactId>chushiy-common</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.chushiy</groupId>
+            <artifactId>chushiy-json</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

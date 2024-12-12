@@ -1,4 +1,4 @@
-package com.chushiy.standard.json.exception;
+package com.chushiy.jsonapi.exception;
 
 /**
  * @Author 初时y
@@ -6,7 +6,7 @@ package com.chushiy.standard.json.exception;
  * @DateTime 2024/5/28 下午 9:25
  * @Description JSON异常 顶级类
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.standard.json.exception
+ * @PackageName com.chushiy.jsonapi.exception
  * @ClassName JSONEexception.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0

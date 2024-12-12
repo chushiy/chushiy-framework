@@ -1,9 +1,8 @@
 package com.chushiy.json;
 
-import com.chushiy.standard.json.JSON;
-import com.chushiy.standard.json.JSONParseException;
-import com.chushiy.standard.json.exception.JSONSerializationException;
-import com.chushiy.standard.pojo.POJO;
+import com.chushiy.jsonapi.JSON;
+import com.chushiy.jsonapi.exception.JSONParseException;
+import com.chushiy.jsonapi.exception.JSONSerializationException;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -30,8 +29,8 @@ public class Gson implements JSON {
     }
 
     @Override
-    public String toJSONString(POJO pojo) throws JSONSerializationException {
-        return toJSONString((Serializable) pojo);
+    public String toJSONString(Object obj) throws JSONSerializationException {
+        return toJSONString((Serializable) obj);
     }
 
     @Override

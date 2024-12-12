@@ -1,7 +1,8 @@
-package com.chushiy.standard.json;
+package com.chushiy.jsonapi;
 
-import com.chushiy.standard.json.exception.JSONSerializationException;
-import com.chushiy.standard.pojo.POJO;
+
+import com.chushiy.jsonapi.exception.JSONParseException;
+import com.chushiy.jsonapi.exception.JSONSerializationException;
 
 import java.io.Serializable;
 
@@ -11,7 +12,7 @@ import java.io.Serializable;
  * @DateTime 2024/3/24 上午 11:30
  * @Description JSON接口
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.standard.json
+ * @PackageName com.chushiy.jsonapi
  * @ClassName JSON.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
@@ -29,10 +30,10 @@ public interface JSON {
     /**
      * 转换为JSON字符串
      *
-     * @param pojo pojo
+     * @param obj 对象
      * @return JSON字符串
      */
-    String toJSONString(POJO pojo) throws JSONSerializationException;
+    String toJSONString(Object obj) throws JSONSerializationException;
 
     /**
      * 解析成指定的class
