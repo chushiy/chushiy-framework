@@ -28,7 +28,7 @@ public class JSONFactory {
      * @Description 获取JSON提供者
      * @Deprecated 方法内部调用的就是 {@link #getJSONProvider()} 方法名不是很规范 不推荐<br>
      * 推荐使用 {@link #getJSONProvider()} <br>
-     * @Return com.chushiy.standard.json.JSON
+     * @Return com.chushiy.jsonapi.JSON
      **/
     @Deprecated
     public static JSON getJSON() {
@@ -39,7 +39,7 @@ public class JSONFactory {
      * @Author 初时y
      * @DateTime 2024/5/29 下午 6:46
      * @Description 获取JSON提供者
-     * @Return com.chushiy.standard.json.JSON
+     * @Return com.chushiy.jsonapi.JSON
      **/
     public static JSON getJSONProvider() {
         if (json != null) {
