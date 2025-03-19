@@ -45,7 +45,11 @@ public class PageRequest implements Request {
     }
 
     public Long getSize() {
-        if (ObjectUtils.isEmpty(this.current)) {
+        if (ObjectUtils.isEmpty(this.size)) {
+            return PageConstant.DEFAULT_SIZE;
+        }
+        // 非法页大小
+        if (this.size < 0) {
             return PageConstant.DEFAULT_SIZE;
         }
         return size;
