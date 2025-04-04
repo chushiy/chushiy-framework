@@ -23,7 +23,7 @@ public class ChuShiyUtils {
      * @param val 验证值
      * @throws IllegalArgumentException exception
      */
-    public void verify(String val) throws IllegalArgumentException {
+    public static void verify(String val) throws IllegalArgumentException {
         Assert.isTrue(CHUSHIY.equals(val));
     }
 }

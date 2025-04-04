@@ -383,7 +383,8 @@
                 <artifactId>maven-gpg-plugin</artifactId>
                 <version>1.5</version>
                 <configuration>
-                    <executable>E:\Program Files (x86)\GnuPG\bin\gpg.exe</executable>
+<!--                    <executable>E:\Program Files (x86)\GnuPG\bin\gpg.exe</executable>-->
+                    <executable>D:\software\GnuPG\bin\gpg.exe</executable>
                     <keyname>chushiy</keyname>
                 </configuration>
                 <executions>
