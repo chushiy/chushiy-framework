@@ -70,7 +70,7 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         } catch (Exception e) {
             encryptStr = "";
         }
-        log.info("响应加密:原始响应:{},加密响应:{}", bodyStr, encryptStr);
+        log.trace("响应加密:原始响应:{},加密响应:{}", bodyStr, encryptStr);
         return encryptStr;
     }
 }
