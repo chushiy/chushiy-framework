@@ -30,6 +30,22 @@ public class BusinessException extends RuntimeException implements Serializable 
     private BusinessException() {
     }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public static BusinessException of(String message) {
+        return new BusinessException(message);
+    }
+
+    public static BusinessException of(String code, String message) {
+        return new BusinessException(code, message);
+    }
+
     /**
      * @param message
      * @deprecated 可以自己传入code或者message不推荐 <br>
