@@ -61,7 +61,7 @@
             <artifactId>spring-boot-starter-logging</artifactId>
         </dependency>
 
-        <!-- mybais-plus -->
+        <!-- mybatis-plus -->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus</artifactId>
