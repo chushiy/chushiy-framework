@@ -6,13 +6,14 @@
     <parent>
         <groupId>io.github.chushiy</groupId>
         <artifactId>chushiy-framework</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <packaging>jar</packaging>
     <description>微信相关</description>
 
     <artifactId>chushiy-wechat</artifactId>
+    <name>chushiy-wechat</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

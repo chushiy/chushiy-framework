@@ -6,10 +6,12 @@
     <parent>
         <groupId>io.github.chushiy</groupId>
         <artifactId>chushiy-framework</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>chushiy-spring-boot-starter-test</artifactId>
+
+    <name>chushiy-spring-boot-starter-test</name>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

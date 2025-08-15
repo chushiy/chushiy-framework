@@ -6,10 +6,12 @@
     <parent>
         <groupId>io.github.chushiy</groupId>
         <artifactId>chushiy-framework</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </parent>
 
     <artifactId>chushiy-crypto</artifactId>
+
+    <name>chushiy-crypto</name>
 
     <description>
         加密解密工具包
