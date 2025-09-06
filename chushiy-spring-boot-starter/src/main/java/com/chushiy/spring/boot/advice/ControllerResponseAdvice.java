@@ -1,13 +1,13 @@
 package com.chushiy.spring.boot.advice;
 
 import com.chushiy.spring.boot.annotation.ControllerResponse;
-import com.chushiy.standard.pojo.R;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -30,7 +30,8 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  */
 @Slf4j
 @RestControllerAdvice
-@Order(-1)
+// 最高优先级
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @RequiredArgsConstructor
 public class ControllerResponseAdvice implements ResponseBodyAdvice<Object> {
 

@@ -2,9 +2,11 @@ package com.chushiy.spring.boot.autoconfigure.config;
 
 import com.chushiy.spring.boot.converter.StringToLocalDateConverter;
 import com.chushiy.spring.boot.autoconfigure.properties.ChuShiyProperties;
+import com.chushiy.spring.boot.log.interceptor.LogInterceptor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -24,15 +26,15 @@ public class WebMvcConfig implements WebMvcConfigurer {
 
     private final ChuShiyProperties chuShiYProperties;
 
+    private final LogInterceptor logInterceptor;
+
     @Override
     public void addFormatters(FormatterRegistry registry) {
-        WebMvcConfigurer.super.addFormatters(registry);
         registry.addConverter(new StringToLocalDateConverter(this.chuShiYProperties));
     }
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        WebMvcConfigurer.super.addCorsMappings(registry);
         registry
                 // 对所有的路径生效
                 .addMapping("/**")
@@ -51,5 +53,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
     @Override
     public void configurePathMatch(PathMatchConfigurer configurer) {
         configurer.addPathPrefix(chuShiYProperties.getPrefix(), p -> true);
+    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(this.logInterceptor)
+                .addPathPatterns("/**")
+                .excludePathPatterns("/health", "/actuator/**");
     }
 }

@@ -62,6 +62,10 @@ public class Result<T> implements VO {
      * 链路追踪ID
      */
     private String traceId;
+    /**
+     * 请求ID
+     */
+    private String requestId;
 
     protected Result() {
         this.code = ResponseConstant.SUCCESS_CODE;

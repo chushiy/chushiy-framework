@@ -1,4 +1,4 @@
-package com.chushiy.spring.boot.filter;
+package com.chushiy.spring.boot.log.filter;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.web.servlet.filter.OrderedFilter;
@@ -16,7 +16,7 @@ import java.io.IOException;
  * @DateTime 2024/3/24 下午 4:59
  * @Description 日志
  * @ProjectName chushiy-framework
- * @PackageName com.chushiy.spring.boot.filter
+ * @PackageName com.chushiy.spring.boot.log.filter
  * @ClassName LogFilter.java
  * @ProductName IntelliJ IDEA
  * @Version 1.0
