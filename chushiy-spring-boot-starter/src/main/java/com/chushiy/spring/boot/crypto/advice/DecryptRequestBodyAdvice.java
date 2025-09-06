@@ -5,6 +5,7 @@ import com.chushiy.crypto.util.CryptoUtils;
 import com.chushiy.spring.boot.crypto.annotation.DecryptRequestBody;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.MethodParameter;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpInputMessage;
@@ -31,7 +32,7 @@ import java.lang.reflect.Type;
  * @Version 1.0.0
  */
 @Slf4j
-@Order(2)
+@Order(Ordered.HIGHEST_PRECEDENCE + 2)
 @RestControllerAdvice
 public class DecryptRequestBodyAdvice extends RequestBodyAdviceAdapter {
 

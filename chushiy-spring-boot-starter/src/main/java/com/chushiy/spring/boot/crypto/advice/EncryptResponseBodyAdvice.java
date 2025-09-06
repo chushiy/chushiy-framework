@@ -2,15 +2,14 @@ package com.chushiy.spring.boot.crypto.advice;
 
 import com.chushiy.crypto.CryptoFactory;
 import com.chushiy.crypto.enums.CryptoType;
-import com.chushiy.crypto.util.CryptoUtils;
 import com.chushiy.spring.boot.crypto.annotation.EncryptResponseBody;
 import com.chushiy.standard.pojo.Result;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ObjectUtils;
 import org.springframework.core.MethodParameter;
+import org.springframework.core.Ordered;
 import org.springframework.core.annotation.Order;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -34,7 +33,7 @@ import java.util.Objects;
  */
 @Slf4j
 @RestControllerAdvice
-@Order(2)
+@Order(Ordered.HIGHEST_PRECEDENCE + 2)
 @RequiredArgsConstructor
 public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
 
@@ -70,7 +69,9 @@ public class EncryptResponseBodyAdvice implements ResponseBodyAdvice<Object> {
         } catch (Exception e) {
             encryptStr = "";
         }
-        log.trace("响应加密:原始响应:{},加密响应:{}", bodyStr, encryptStr);
+        if (log.isDebugEnabled()) {
+            log.trace("响应加密:原始响应:{},加密响应:{}", bodyStr, encryptStr);
+        }
         return encryptStr;
     }
 }
