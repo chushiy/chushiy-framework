@@ -33,11 +33,12 @@ public class ChuShiyProperties {
     private CorsRegistration cors;
 
     /**
-     * 前缀
+     * 统一的请求前缀
      */
     private String prefix;
 
     public static class CorsRegistration {
+
         private String pathPattern;
 
         private CorsConfiguration config;
