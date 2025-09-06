@@ -58,6 +58,10 @@ public class Result<T> implements VO {
      * 数据
      */
     private T data;
+    /**
+     * 链路追踪ID
+     */
+    private String traceId;
 
     protected Result() {
         this.code = ResponseConstant.SUCCESS_CODE;
@@ -114,6 +118,15 @@ public class Result<T> implements VO {
         this.data = data;
     }
 
+    private Result(String code, String message, T data, String traceId, Map<String, Object> extra) {
+        this.code = code;
+        this.timestamp = System.currentTimeMillis();
+        this.message = message;
+        this.data = data;
+        this.traceId = traceId;
+        this.extra = extra;
+    }
+
     public static Result<Void> success() {
         return ok();
     }
@@ -132,6 +145,14 @@ public class Result<T> implements VO {
 
     public static <T> Result<T> success(String message, T data) {
         return ok(message, data);
+    }
+
+    public static <T> Result<T> success(String code, String message, T data, String traceId) {
+        return ok(code, message, data, traceId);
+    }
+
+    public static <T> Result<T> success(String code, String message, T data, String traceId, Map<String, Object> extra) {
+        return ok(code, message, data, traceId, extra);
     }
 
     public static Result<Void> ok() {
@@ -161,6 +182,14 @@ public class Result<T> implements VO {
 
     public static <T> Result<T> ok(String message, T data) {
         return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data);
+    }
+
+    public static <T> Result<T> ok(String code, String message, T data, String traceId) {
+        return new Result<>(ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data);
+    }
+
+    public static <T> Result<T> ok(String code, String message, T data, String traceId, Map<String, Object> extra) {
+        return new Result<>(code, ResultI18nMessageAssemblerProvider.getProvider().assembler(I18nConfig.language, message), data, traceId, extra);
     }
 
     public static Result<Void> fail() {
