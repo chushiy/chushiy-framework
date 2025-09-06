@@ -41,12 +41,15 @@ public class TraceAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public Object beforeBodyWrite(Object body, MethodParameter returnType, MediaType selectedContentType, Class<? extends HttpMessageConverter<?>> selectedConverterType, ServerHttpRequest request, ServerHttpResponse response) {
         Assert.notNull(returnType, "returnType is null");
-        Assert.isTrue(body instanceof Result, "returnType not is Result");
-        Result result = (Result) body;
-        result.setTraceId(ThreadLocalTraceContextHolder.getCurrentTraceId());
-        if (log.isDebugEnabled()) {
-            log.info("设置traceId");
+        // 部分接口不一定返回Result
+        if (body instanceof Result) {
+            Result result = (Result) body;
+            result.setTraceId(ThreadLocalTraceContextHolder.getCurrentTraceId());
+            if (log.isDebugEnabled()) {
+                log.info("设置traceId");
+            }
+            return result;
         }
-        return result;
+        return body;
     }
 }
