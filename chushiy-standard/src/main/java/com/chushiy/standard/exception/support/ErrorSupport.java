@@ -16,14 +16,14 @@ public interface ErrorSupport {
     /**
      * is系统错误
      *
-     * @return
+     * @return 是否系统错误
      */
     boolean isSystemError();
 
     /**
      * 错误模块
      *
-     * @return
+     * @return 错误模块
      */
     ModuleSupport module();
 
@@ -33,7 +33,7 @@ public interface ErrorSupport {
      * 第一位 0|1 0表示系统错误
      * 系统错误?1:0+模块code 4位+错误码 3位
      *
-     * @return
+     * @return 错误code
      */
     String getCode();
 
@@ -45,7 +45,7 @@ public interface ErrorSupport {
      * 系统错误?1:0+模块code 4位+错误码 3位
      *
      * @param code 错误码 3位
-     * @return
+     * @return 错误码为8位
      */
     default String getCode(String code) {
         return (this.isSystemError() ? 0 : 1) + this.module().code() + code;
@@ -54,7 +54,7 @@ public interface ErrorSupport {
     /**
      * 错误信息
      *
-     * @return
+     * @return 错误信息
      */
     String getMessage();
 }
