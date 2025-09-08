@@ -1,6 +1,8 @@
 package com.chushiy.spring.boot.aspect;
 
+import cn.hutool.core.util.ObjUtil;
 import com.alibaba.fastjson2.JSON;
+import com.chushiy.standard.ip.Ip2regionUtils;
 import com.chushiy.standard.ip.IpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -60,24 +62,85 @@ public class ApiLogAspect {
             String params = JSON.toJSONString(filterRequestParams(joinPoint.getArgs()));
             // 请求方法签名
             Signature signature = joinPoint.getSignature();
-            // 接口返回结果
-            Object result = joinPoint.proceed();
-            Object resultString = JSON.toJSONString(result);
+            Object result = null;
+            Throwable exception = null;
+
+            try {
+                // 接口返回结果
+                result = joinPoint.proceed();
+            } catch (Throwable e) {
+                exception = e;
+            }
+
             // 耗时
             long elapsedTime = System.currentTimeMillis() - start;
 
-            log.info("\n\n\r======================================================================\n\r" +
-                            "请求ip=> {} \n\r" +
-                            "请求地址=> {} \n\r" +
-                            "请求方式=> {} \n\r" +
-                            "请求类方法=> {} \n\r" +
-                            "请求方法参数=> {} \n\r" +
-                            "返回结果=> {} \n\r" +
-                            "处理耗时=> {}ms \n\r" +
-                            "======================================================================\n\r",
-                    ip, uri, method, signature, params, resultString, elapsedTime
-            );
+            if (ObjUtil.isNull(exception)) {
+                Object resultString = JSON.toJSONString(result);
+                // log.info(
+                //         "\n\n\r======================================================================\n\r" +
+                //                 "请求ip=>     {} \n\r" +
+                //                 "ip地址=>     {} \n\r" +
+                //                 "请求地址=>    {} \n\r" +
+                //                 "请求方式=>    {} \n\r" +
+                //                 "请求类方法=>   {} \n\r" +
+                //                 "请求方法参数=>  {} \n\r" +
+                //                 "处理耗时=>     {}ms \n\r" +
+                //                 "返回结果=>     {} \n\r" +
+                //                 "======================================================================\n\r",
+                //         ip, Ip2regionUtils.getIp2Region(ip), uri, method, signature, params, resultString, elapsedTime
+                // );
+                log.info(
+                        "\n" +
+                                "================================================================================\n" +
+                                "请求IP     => {}\n" +
+                                "IP地理位置  => {}\n" +
+                                "请求地址    => {}\n" +
+                                "请求方式    => {}\n" +
+                                "请求类方法  => {}\n" +
+                                "请求参数    => {}\n" +
+                                "处理耗时    => {}ms\n" +
+                                "返回结果    => {}\n" +
+                                "================================================================================",
+                        ip,
+                        Ip2regionUtils.getIp2Region(ip),
+                        uri,
+                        method,
+                        signature,
+                        params,
+                        elapsedTime,
+                        resultString
+                );
+            } else {
+                log.error(
+                        "\n" +
+                                "================================================================================\n" +
+                                "         ❌ API 请求失败 \n" +
+                                "--------------------------------------------------------------------------------\n" +
+                                "请求IP        => {}\n" +
+                                "IP地理位置    => {}\n" +
+                                "请求地址      => {}\n" +
+                                "请求方式      => {}\n" +
+                                "请求类方法    => {}\n" +
+                                "请求参数      => {}\n" +
+                                "处理耗时      => {}ms\n" +
+                                "--------------------------------------------------------------------------------\n" +
+                                "异常信息      => \n" +
+                                "================================================================================",
+                        ip,
+                        Ip2regionUtils.getIp2Region(ip),
+                        uri,
+                        method,
+                        signature,
+                        params,
+                        elapsedTime,
+                        exception
+                );
+            }
 
+            if (ObjUtil.isNotNull(exception)) {
+                throw exception;
+            }
             return result;
         } catch (Exception e) {
             log.error("日志记录异常=>", e);
