@@ -75,6 +75,7 @@
             <artifactId>UserAgentUtils</artifactId>
             <version>1.21</version>
         </dependency>
+
     </dependencies>
 
 </project>

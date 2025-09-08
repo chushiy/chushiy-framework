@@ -97,6 +97,7 @@
         <gson.version>2.10.1</gson.version>
         <jackson.version>2.10.1</jackson.version>
         <bcprov.version>1.78.1</bcprov.version>
+        <ip2region.version>2.7.0</ip2region.version>
     </properties>
 
     <dependencyManagement>
@@ -303,6 +304,12 @@
                 <version>${bcprov.version}</version>
             </dependency>
 
+            <!-- 离线IP地址定位库和IP定位数据管理框架 -->
+            <dependency>
+                <groupId>org.lionsoul</groupId>
+                <artifactId>ip2region</artifactId>
+                <version>${ip2region.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
