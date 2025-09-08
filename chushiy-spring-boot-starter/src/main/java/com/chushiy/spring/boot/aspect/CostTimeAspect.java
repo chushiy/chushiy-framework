@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @Author 初时y
  * @DateTime 2023/11/27 下午 8:07
  * @Description 实现代码耗时注解切面实现
- * @ProjectName gulimall
+ * @ProjectName chushiy-framework
  * @PackageName com.chushiy.spring.boot.aspect
  * @ClassName CostTimeAspect.java
  * @ProductName IntelliJ IDEA
@@ -28,30 +28,30 @@ public class CostTimeAspect {
     }
 
     @Around("costTime()")
-    public Object costTimeAround(ProceedingJoinPoint joinPoint) {
+    public Object costTimeAround(ProceedingJoinPoint joinPoint) throws Throwable {
+        long beginTime = System.currentTimeMillis();
         Object obj = null;
         try {
-            long beginTime = System.currentTimeMillis();
             obj = joinPoint.proceed();
-            // 获取方法名称
-            String method = joinPoint.getSignature().getName();
-            // 获取类名称
-            String className = joinPoint.getSignature().getDeclaringTypeName();
-            // 计算耗时
-            long cost = System.currentTimeMillis() - beginTime;
-            InterfaceTimeLevelEnum interfaceTimeLevel = InterfaceTimeLevelEnum.getInterfaceTimeLevel(cost);
-            if (log.isDebugEnabled()) {
-                // 慢接口
-                if (interfaceTimeLevel.getLevel() > InterfaceTimeLevelEnum.ite3.getLevel()) {
-                    log.warn("类:[{}]，方法:[{}]，接口耗时:[{}]毫秒！接口耗时等级:{}", className, method, cost, interfaceTimeLevel);
-                } else {
-                    log.info("类:[{}]，方法:[{}] 接口耗时:[{}] 毫秒", className, method, cost);
-                }
+        } catch (Throwable e) {
+            throw e;
+        }
+        // 获取方法名称
+        String method = joinPoint.getSignature().getName();
+        // 获取类名称
+        String className = joinPoint.getSignature().getDeclaringTypeName();
+        // 计算耗时
+        long cost = System.currentTimeMillis() - beginTime;
+        InterfaceTimeLevelEnum interfaceTimeLevel = InterfaceTimeLevelEnum.getInterfaceTimeLevel(cost);
+        if (log.isDebugEnabled()) {
+            // 慢接口
+            if (interfaceTimeLevel.getLevel() > InterfaceTimeLevelEnum.ite3.getLevel()) {
+                log.warn("类:[{}]，方法:[{}]，接口耗时:[{}]毫秒！接口耗时等级:{}", className, method, cost, interfaceTimeLevel);
             } else {
                 log.info("类:[{}]，方法:[{}] 接口耗时:[{}] 毫秒", className, method, cost);
             }
-        } catch (Throwable throwable) {
-            throwable.printStackTrace();
+        } else {
+            log.info("类:[{}]，方法:[{}] 接口耗时:[{}] 毫秒", className, method, cost);
         }
         return obj;
     }
