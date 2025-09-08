@@ -2,7 +2,6 @@ package com.chushiy.spring.boot.aspect;
 
 import cn.hutool.core.util.ObjUtil;
 import com.alibaba.fastjson2.JSON;
-import com.chushiy.standard.ip.Ip2regionUtils;
 import com.chushiy.standard.ip.IpUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -90,11 +89,32 @@ public class ApiLogAspect {
                 //                 "======================================================================\n\r",
                 //         ip, Ip2regionUtils.getIp2Region(ip), uri, method, signature, params, resultString, elapsedTime
                 // );
+                // log.info(
+                //         "\n" +
+                //                 "================================================================================\n" +
+                //                 "请求IP     => {}\n" +
+                //                 "IP地理位置  => {}\n" +
+                //                 "请求地址    => {}\n" +
+                //                 "请求方式    => {}\n" +
+                //                 "请求类方法  => {}\n" +
+                //                 "请求参数    => {}\n" +
+                //                 "处理耗时    => {}ms\n" +
+                //                 "返回结果    => {}\n" +
+                //                 "================================================================================",
+                //         ip,
+                //         Ip2regionUtils.getIp2Region(ip),
+                //         uri,
+                //         method,
+                //         signature,
+                //         params,
+                //         elapsedTime,
+                //         resultString
+                // );
+
                 log.info(
                         "\n" +
                                 "================================================================================\n" +
                                 "请求IP     => {}\n" +
-                                "IP地理位置  => {}\n" +
                                 "请求地址    => {}\n" +
                                 "请求方式    => {}\n" +
                                 "请求类方法  => {}\n" +
@@ -103,7 +123,6 @@ public class ApiLogAspect {
                                 "返回结果    => {}\n" +
                                 "================================================================================",
                         ip,
-                        Ip2regionUtils.getIp2Region(ip),
                         uri,
                         method,
                         signature,
@@ -112,13 +131,36 @@ public class ApiLogAspect {
                         resultString
                 );
             } else {
+                // log.error(
+                //         "\n" +
+                //                 "================================================================================\n" +
+                //                 "         ❌ API 请求失败 \n" +
+                //                 "--------------------------------------------------------------------------------\n" +
+                //                 "请求IP        => {}\n" +
+                //                 "IP地理位置    => {}\n" +
+                //                 "请求地址      => {}\n" +
+                //                 "请求方式      => {}\n" +
+                //                 "请求类方法    => {}\n" +
+                //                 "请求参数      => {}\n" +
+                //                 "处理耗时      => {}ms\n" +
+                //                 "--------------------------------------------------------------------------------\n" +
+                //                 "异常信息      => \n" +
+                //                 "================================================================================",
+                //         ip,
+                //         Ip2regionUtils.getIp2Region(ip),
+                //         uri,
+                //         method,
+                //         signature,
+                //         params,
+                //         elapsedTime,
+                //         exception
+                // );
                 log.error(
                         "\n" +
                                 "================================================================================\n" +
                                 "         ❌ API 请求失败 \n" +
                                 "--------------------------------------------------------------------------------\n" +
                                 "请求IP        => {}\n" +
-                                "IP地理位置    => {}\n" +
                                 "请求地址      => {}\n" +
                                 "请求方式      => {}\n" +
                                 "请求类方法    => {}\n" +
@@ -128,7 +170,6 @@ public class ApiLogAspect {
                                 "异常信息      => \n" +
                                 "================================================================================",
                         ip,
-                        Ip2regionUtils.getIp2Region(ip),
                         uri,
                         method,
                         signature,
