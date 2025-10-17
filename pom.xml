@@ -45,7 +45,7 @@
         <module>chushiy-spring-boot-starter</module>
         <module>chushiy-json</module>
         <module>chushiy-swagger</module>
-        <module>chusiy-oss-spring-boot-starter</module>
+        <module>chushiy-oss-spring-boot-starter</module>
         <module>chushiy-orm</module>
         <module>chushiy-orm-mybatis</module>
         <module>chushiy-orm-mybatis-plus</module>
@@ -168,7 +168,7 @@
             <dependency>
                 <!--    <groupId>com.chushiy</groupId>-->
                 <groupId>io.github.chushiy</groupId>
-                <artifactId>chusiy-oss-spring-boot-starter</artifactId>
+                <artifactId>chushiy-oss-spring-boot-starter</artifactId>
                 <version>${chushiy.version}</version>
             </dependency>
 

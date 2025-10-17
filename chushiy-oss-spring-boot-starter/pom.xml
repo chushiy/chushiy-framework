@@ -11,9 +11,9 @@
         <version>1.0.1</version>
     </parent>
 
-    <artifactId>chusiy-oss-spring-boot-starter</artifactId>
+    <artifactId>chushiy-oss-spring-boot-starter</artifactId>
 
-    <name>chusiy-oss-spring-boot-starter</name>
+    <name>chushiy-oss-spring-boot-starter</name>
 
     <description>
         自定义OSS Starter包 开箱即用
