@@ -31,6 +31,5 @@ public enum CryptoType {
     /**
      * BASE64
      */
-    BASE64
-    ;
+    BASE64;
 }

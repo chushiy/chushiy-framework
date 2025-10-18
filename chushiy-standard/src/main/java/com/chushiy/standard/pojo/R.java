@@ -13,5 +13,5 @@ package com.chushiy.standard.pojo;
  */
 public class R<T> extends Result<T> {
 
-    
+
 }

@@ -6,6 +6,7 @@ import com.chushiy.crypto.properties.ChuShiyCryptoProperties;
 import com.chushiy.crypto.util.VerifyHeaderChuShiyUtils;
 import com.chushiy.standard.exception.BusinessException;
 import com.chushiy.standard.util.Assert;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -15,8 +16,6 @@ import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
-
-import javax.servlet.http.HttpServletRequest;
 
 /**
  * @Author 初时y

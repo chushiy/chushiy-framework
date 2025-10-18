@@ -1,7 +1,7 @@
 package com.chushiy.crypto;
 
 import cn.hutool.crypto.digest.MD5;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 /**
  * @Author 初时y
@@ -17,7 +17,7 @@ import org.junit.Test;
 public class TestMD5 {
 
     @Test
-    public void test(){
+    public void test() {
         String salt = "chushiy11080";
         // MD5 md5 = new MD5(salt.getBytes());
         MD5 md5 = MD5.create();

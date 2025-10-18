@@ -1,16 +1,11 @@
 package com.chushiy.crypto;
 
 import com.chushiy.crypto.exception.CryptoException;
-import com.chushiy.crypto.properties.ChuShiyCryptoProperties;
-import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 
 /**
  * @Author 初时y
@@ -58,7 +53,8 @@ public class MD5 implements Crypto {
 
     /**
      * 校验明文和密文是否一致
-     * @param plaintext 明文
+     *
+     * @param plaintext  明文
      * @param ciphertext 密文
      * @return boolean
      * @throws CryptoException

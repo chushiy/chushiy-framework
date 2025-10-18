@@ -1,16 +1,16 @@
 package com.chushiy.spring.boot3.log.filter;
 
-import cn.hutool.extra.servlet.ServletUtil;
+import cn.hutool.extra.servlet.JakartaServletUtil;
 import com.chushiy.spring.boot3.log.context.ThreadLocalTraceContextHolder;
+import jakarta.servlet.Filter;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
-import javax.servlet.Filter;
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
@@ -65,7 +65,7 @@ public class RequestLogFilter implements Filter {
         String method = request.getMethod();
         String uri = request.getRequestURI();
         String queryString = request.getQueryString();
-        String clientIp = ServletUtil.getClientIP(request);
+        String clientIp = JakartaServletUtil.getClientIP(request);
 
         StringBuilder logMsg = new StringBuilder();
         logMsg.append("HTTP请求开始 - ");

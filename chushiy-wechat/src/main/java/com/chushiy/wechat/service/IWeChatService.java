@@ -28,7 +28,7 @@ public interface IWeChatService {
      * 微信小程序登录
      *
      * @param restTemplate RestTemplate
-     * @param code 微信小程序code
+     * @param code         微信小程序code
      * @return 请求微信微信小程序登录接口响应
      * @throws IllegalArgumentException 参数错误
      */

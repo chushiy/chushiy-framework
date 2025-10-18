@@ -1,6 +1,5 @@
 package com.chushiy.orm.mybatisplusjoin.config;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.core.MybatisConfiguration;
@@ -14,7 +13,6 @@ import com.chushiy.orm.mybatisplusjoin.ChuShiyMybatisPlusJoinMetaObjectHandler;
 import com.chushiy.standard.enums.DeleteFlagEnum;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 

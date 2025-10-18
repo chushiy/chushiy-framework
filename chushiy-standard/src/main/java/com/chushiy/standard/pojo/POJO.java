@@ -1,6 +1,5 @@
 package com.chushiy.standard.pojo;
 
-import com.chushiy.json.FastJSON;
 import com.chushiy.json.JSONFactory;
 import com.chushiy.jsonapi.JSON;
 

@@ -8,7 +8,7 @@ import lombok.Setter;
 import org.bouncycastle.jce.provider.BouncyCastleProvider;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-import javax.annotation.PostConstruct;
+import jakarta.annotation.PostConstruct;
 import java.security.KeyPair;
 import java.security.PrivateKey;
 import java.security.PublicKey;

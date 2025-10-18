@@ -26,15 +26,15 @@ public enum PlatformEnum {
     /**
      * Unkonwn
      */
-    UNKONWN("Unkonwn","未知"),
+    UNKONWN("Unkonwn", "未知"),
     /**
      * IOS
      */
-    IOS( "IOS", "IOS"),
+    IOS("IOS", "IOS"),
     /**
      * Android
      */
-    ANDROID( "Android", "Android"),
+    ANDROID("Android", "Android"),
     /**
      * PC
      */
@@ -42,7 +42,7 @@ public enum PlatformEnum {
     /**
      * WECHAT
      */
-    WECHAT( "WECHAT", "微信"),
+    WECHAT("WECHAT", "微信"),
     ;
 
     /**
@@ -63,9 +63,8 @@ public enum PlatformEnum {
             PLATFORM_MAP.put(platformEnum.platform, platformEnum);
         }
     }
-    
+
     /**
-     *
      * @param platform 客户端类型
      * @return PlatformEnum
      */

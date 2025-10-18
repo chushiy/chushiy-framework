@@ -40,7 +40,7 @@ public class TraceContext {
         this.extra = new HashMap<>();
     }
 
-    public void addExtra(String key, Object value){
+    public void addExtra(String key, Object value) {
         this.extra.put(key, value);
     }
 }

@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @ProductName IntelliJ IDEA
  * @Version 1.0.0
  */
-public class CryptoException  extends RuntimeException implements Serializable {
+public class CryptoException extends RuntimeException implements Serializable {
 
     public CryptoException(String message) {
         super(message);

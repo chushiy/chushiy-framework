@@ -23,6 +23,7 @@ public class JacksonConfig {
      * 配置ObjectMapper
      * 为什么不使用@Bean
      * 不能覆盖容器中有的配置 在已有的配置上面在进行配置
+     *
      * @param objectMapper objectMapper
      */
     @Autowired

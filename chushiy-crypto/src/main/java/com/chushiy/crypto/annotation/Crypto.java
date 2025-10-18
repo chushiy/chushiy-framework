@@ -21,13 +21,14 @@ import java.lang.annotation.Target;
  * @Version 1.0.0
  */
 @Documented
-@Target({ElementType.METHOD,ElementType.TYPE})
+@Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Inherited
 public @interface Crypto {
 
     /**
      * 加解密类型 默认AES
+     *
      * @return CryptoType
      */
     CryptoType type() default CryptoType.AES;

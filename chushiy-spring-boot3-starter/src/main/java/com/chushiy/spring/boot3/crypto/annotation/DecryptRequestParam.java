@@ -28,6 +28,7 @@ public @interface DecryptRequestParam {
 
     /**
      * 加解密类型 默认AES
+     *
      * @return CryptoType
      */
     CryptoType type() default CryptoType.AES;

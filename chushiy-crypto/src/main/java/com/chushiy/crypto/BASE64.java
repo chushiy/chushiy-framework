@@ -1,7 +1,6 @@
 package com.chushiy.crypto;
 
 import com.chushiy.crypto.exception.CryptoException;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
@@ -20,7 +19,7 @@ import java.util.Base64;
  */
 @Slf4j
 @Component
-public class BASE64 implements Crypto{
+public class BASE64 implements Crypto {
 
     @Override
     public String encrypt(String plaintext) throws CryptoException {
