@@ -42,7 +42,7 @@
 
     <modules>
         <module>chushiy-standard</module>
-        <module>chushiy-spring-boot-starter</module>
+        <module>chushiy-spring-boot3-starter</module>
         <module>chushiy-json</module>
         <module>chushiy-swagger</module>
         <module>chushiy-oss-spring-boot-starter</module>
@@ -146,7 +146,7 @@
             <dependency>
                 <!--    <groupId>com.chushiy</groupId>-->
                 <groupId>io.github.chushiy</groupId>
-                <artifactId>chushiy-spring-boot-starter</artifactId>
+                <artifactId>chushiy-spring-boot3-starter</artifactId>
                 <version>${chushiy.version}</version>
             </dependency>
 
