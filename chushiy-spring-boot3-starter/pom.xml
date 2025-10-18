@@ -41,7 +41,7 @@
             <artifactId>chushiy-crypto</artifactId>
         </dependency>
 
-        <!-- 閰嶇疆澶勭悊鍣?-->
+        <!-- 配置处理器 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-configuration-processor</artifactId>
@@ -69,7 +69,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
-        <!-- 瀹㈡埛绔伐鍏风被搴?-->
+        <!-- 客户端工具类库 -->
         <dependency>
             <groupId>eu.bitwalker</groupId>
             <artifactId>UserAgentUtils</artifactId>
