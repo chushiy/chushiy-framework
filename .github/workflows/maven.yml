@@ -11,7 +11,6 @@ on:
 # 添加必要的权限
 permissions:
   contents: write
-  dependency-graph: write
 
 jobs:
   build:
@@ -33,4 +32,3 @@ jobs:
       uses: advanced-security/maven-dependency-submission-action@v3.0.2
       with:
         directory: .
-        settings-file: .github/maven/settings.xml
