@@ -72,26 +72,39 @@
 
 感谢所有为开源社区做出贡献的开发者，正是有了这些优秀的开源项目，才使得本框架的开发成为可能。
 
-## 项目联系方式
+## License
 
-2283873481@qq.com
+MIT License
 
-## 项目版本
+## 作者
 
-1.0.1
+👨‍💻 **初时Jack**
+- 抖音博主
+- Java全栈开发, Python爬虫逆向
 
-## 项目许可
+## 联系方式
+<p align="center">
+  <img src="img/wechat2.png" alt="作者微信" width="300">
+</p>
 
-Apache License 2.0
+## 微信公众号
+<p align="center">
+  <img src="img/wechatPublicAccount.png" alt="微信公众号" width="300">
+</p>
 
-## 项目作者
+## 请作者喝杯咖啡 ☕
 
-1. 初时y
+如果这个项目对你有帮助，可以请作者喝杯咖啡，你的支持是我更新的动力！
 
-## 项目维护者
+<p align="center">
+  <img src="img/wechat-pay.jpg" alt="微信赞赏" width="300" style="margin: 0 20px;">
+  <img src="img/alipay.jpg" alt="支付宝赞赏" width="300" style="margin: 0 20px;">
+</p>
 
-1. 初时y
+<p align="center">
+  <strong>微信</strong> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>支付宝</strong>
+</p>
 
-## 项目贡献者
+---
 
-1. 初时y
+⭐ 如果这个项目对你有帮助，欢迎 Star！
